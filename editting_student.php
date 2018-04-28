@@ -41,7 +41,7 @@
                         <div class="muted pull-left"><i class="icon-plus-sign icon-large"></i> Editar alumno</div>
                     </div>
                     <div class="block-content collapse in">
-                        <form id="add_student" class="form-signin" method="post">
+
                             <!-- span 4 -->
                             <div class="uploader span2" onclick="$('#filePhoto').click()" style="height: 200px; width: 152px;" >
                                 <img id="imagePreview" src="images/uploadImage.jpg" style="">
@@ -50,26 +50,26 @@
 
                             <div class="span5">
                                 <label>CÓDIGO DE ALUMNO:</label>
-                                <input type="text" class="input-block-level span9"  name="fname" placeholder="Código de alumno" required>
+                                <input type="text" class="input-block-level span9"  name="fname" value="20140143C" required>
                                 <label>APELLIDO PATERNO:</label>
-                                <input type="text" class="input-block-level span9"  name="fname" placeholder="Apellido paterno" required>
+                                <input type="text" class="input-block-level span9"  name="fname" value="Ormeño" required>
                                 <label>APELLIDO MATERNO:</label>
-                                <input type="text" class="input-block-level span9"  name="mname"     placeholder="Apellido materno"     required>
+                                <input type="text" class="input-block-level span9"  name="mname"     value="Vera"     required>
                                 <label>NOMBRES:</label>
-                                <input type="text" class="input-block-level span9"  name="lname"  placeholder="Nombres"  required>
+                                <input type="text" class="input-block-level span9"  name="lname"  value="Wilber Javier"  required>
 
                             </div>
                             <div class="span5">
                                 <label>SEXO:</label>
-                                <select name="student_class" class="span9" required>
-                                    <option value=""> </option>
+                                <select name="student_class" class="span9">
+                                    <option value="" selected>Masculino</option>
                                 </select>
                                 <label>GRADO:</label>
                                 <select name="student_class" class="span9" required>
-                                    <option value=""> </option>
+                                    <option value="" selected>5°</option>
                                 </select>
                                 <label>FECHA DE NACIMIENTO:</label>
-                                <input type="date" class="input-block-level span9"  name="dob" placeholder="Date of Birth">
+                                <input type="date" class="input-block-level span9"  name="dob" value="22/01/1997">
                                 <!--<label>ADDRESS:</label>
                                 <input type="text" Placeholder="Permanent Address" name="address" class="my_message" required>
 
@@ -89,22 +89,22 @@
                             <div class="span12">
                                 <div class="span4">
                                     <label>TELÉFONO:</label>
-                                    <input type="text" class="input-block-level span11"  name="fname" placeholder="Teléfono" required>
+                                    <input type="text" class="input-block-level span11"  name="fname" value="994318344" >
                                 </div>
                                 <div class="span4">
                                     <label>DNI:</label>
-                                    <input type="text" class="input-block-level span11"  name="fname" placeholder="DNI" required>
+                                    <input type="text" class="input-block-level span11"  name="fname" value="32659874" >
                                 </div>
                                 <div class="span4">
                                     <label>EMAIL:</label>
-                                    <input type="text" class="input-block-level span11"  name="fname" placeholder="Email" required>
+                                    <input type="text" class="input-block-level span11"  name="fname" value="wilber.ormeno@uni.pe" >
                                 </div>
                             </div>
                             <div class="span12">
 
                                 <div class="span6 offset3">
                                     <label>DIRECCIÓN:</label>
-                                    <input type="text" class="input-block-level span11"  name="fname" placeholder="Dirección" required>
+                                    <input type="text" class="input-block-level span11"  name="fname" placeholder="Calle. Los Jardines 123" >
                                 </div>
                             </div>
                             <div class="span12">
@@ -113,7 +113,6 @@
                                     <button class="btn btn-success">Guardar</button>
                                 </center>
                             </div>
-                        </form>
                         <script>
                             /*jQuery(document).ready(function($){
                                 $("#add_student").submit(function(e){

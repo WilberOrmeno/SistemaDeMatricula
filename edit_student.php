@@ -31,7 +31,7 @@
 
     </div>
 </div>
-<div style="z-index: 100" le>
+<div class="hide" id="myDIV">
     <?php include("editting_student.php"); ?>
 </div>
 <?php include('script.php'); ?>

@@ -1,6 +1,4 @@
 
-<form action="delete_stud.php" method="post">
-
     <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
         <div class="pull-right">
             <!--
@@ -29,8 +27,23 @@
             <td>5°</td>
             <td>994318344</td>
             <td>wilber.ormeno@uni.pe</td>
-            <td><button class="btn btn-info">Editar</button></td>
+            <td><button id="abajo" class="btn btn-info" onclick="myFunction()">Editar</button></td>
         </tr>
         </tbody>
     </table>
-</form>
+
+<script type="application/javascript">
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    var altura = $(document).height();
+
+    $("#abajo").click(function(){
+        $("html, body").animate({scrollTop:altura+"px"});
+    });
+</script>
