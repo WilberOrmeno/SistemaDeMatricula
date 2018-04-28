@@ -17,18 +17,20 @@
             <th>Grado</th>
             <th>Telefono</th>
             <th>Email</th>
+            <th>Editar</th>
         </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>20140143C</td>
-                <td>Wilber Javier</td>
-                <td>Ormeño</td>
-                <td>Vera</td>
-                <td>5°</td>
-                <td>994318344</td>
-                <td>wilber.ormeno@uni.pe</td>
-            </tr>
+        <tr>
+            <td>20140143C</td>
+            <td>Wilber Javier</td>
+            <td>Ormeño</td>
+            <td>Vera</td>
+            <td>5°</td>
+            <td>994318344</td>
+            <td>wilber.ormeno@uni.pe</td>
+            <td><button class="btn btn-info">Editar</button></td>
+        </tr>
         </tbody>
     </table>
 </form>

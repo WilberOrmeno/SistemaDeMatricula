@@ -39,16 +39,14 @@
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="gridSystemModalLabel">Your Headings</h4>
+                            <h4 class="modal-title" id="gridSystemModalLabel">Información de Wilber Javier Ormeño Vera</h4>
                         </div>
 
                         <!-- Modal Body -->
-                        <div id="imprimirEsto" class="modal-body">
-                            <div class="body-message">
-                                <div class="row" style="background: #0e90d2;">
-                                    <img src="images/cetapsi-sinfondo.png" alt="" style="height: 50px">
-                                    <h3>Hola que hace</h3>
-                                </div>
+                        <div class="modal-body">
+                            <div class="body-message" id="imprimirEsto">
+                                {{Toda la info aqui}}
+                            </div>
                         </div>
 
                         <!-- Modal Footer -->
