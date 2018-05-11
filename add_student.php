@@ -53,13 +53,13 @@
 
                                 <div class="span5">
                                     <label>CÓDIGO DE ALUMNO:</label>
-                                    <input type="text" class="input-block-level span9"  name="fname" placeholder="Código de alumno" required>
+                                    <input type="text" class="input-block-level span9"  name="codAlumno" placeholder="Código de alumno" required>
                                     <label>APELLIDO PATERNO:</label>
-                                    <input type="text" class="input-block-level span9"  name="fname" placeholder="Apellido paterno" required>
+                                    <input type="text" class="input-block-level span9"  name="apePaterno" placeholder="Apellido paterno" required>
                                     <label>APELLIDO MATERNO:</label>
-                                    <input type="text" class="input-block-level span9"  name="mname"     placeholder="Apellido materno"     required>
+                                    <input type="text" class="input-block-level span9"  name="apeMaterno"     placeholder="Apellido materno"     required>
                                     <label>NOMBRES:</label>
-                                    <input type="text" class="input-block-level span9"  name="lname"  placeholder="Nombres"  required>
+                                    <input type="text" class="input-block-level span9"  name="nombres"  placeholder="Nombres"  required>
 
                                 </div>
                                 <div class="span5">
@@ -73,26 +73,11 @@
                                     </select>
                                     <label>FECHA DE NACIMIENTO:</label>
                                     <input type="date" class="input-block-level span9"  name="dob" placeholder="Date of Birth">
-                                    <!--<label>ADDRESS:</label>
-                                    <input type="text" Placeholder="Permanent Address" name="address" class="my_message" required>
-
-
-                                    <dt><label>TRANSPORT:</label></dt>
-                                            <dd><label class="radio-inline"><input type="radio" name="transport" value="yes" checked='true'> Yes </label></dd>
-                                            <dd><label class="radio-inline"><input type="radio" name="transport" value="no"> No</label></dd>
-
-                                    <label>ROUTE:</label>
-                                            <input type="text" Placeholder="Route Name" name="route" class="my_message">
-                                    <br>
-                                    <br>
-                                    <button class="btn btn-success" name="save"><i class="icon-save icon-large"></i> Save </button>
-                                        -->
-
                                 </div>
                                 <div class="span12">
                                     <div class="span4">
                                         <label>TELÉFONO:</label>
-                                        <input type="text" class="input-block-level span11"  name="fname" placeholder="Teléfono" required>
+                                        <input type="text" class="  span11"  name="fname" placeholder="Teléfono" required>
                                     </div>
                                     <div class="span4">
                                         <label>DNI:</label>
@@ -112,7 +97,7 @@
                                 </div>
                                 <div class="span12">
                                     <center>
-                                        <button class="btn btn-warning">Cancelar</button>
+                                        <input type="button" class="btn btn-warning" onclick="formReset()" value="Cancelar">
                                         <button class="btn btn-success">Guardar</button>
                                     </center>
                                 </div>
@@ -133,7 +118,26 @@
 						}
 					});
 				});
-			});*/
+			});
+
+			$(document).on('ready',function(){
+            $('#ButBuscar').click(function(){
+                var url = "UsuarioBuscado.php";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $("#myForm").serialize(),
+                    success: function(data)
+                    {
+                        $('#resultado').html(data);
+                    }
+                });
+
+            });
+        });
+
+
+			*/
             var imageLoader = document.getElementById('filePhoto');
             imageLoader.addEventListener('change', handleImage, false);
 
@@ -144,7 +148,14 @@
                 }
                 reader.readAsDataURL(e.target.files[0]);
             }
+
+
+            function formReset()
+            {
+                document.getElementById("add_student").reset();
+            }
 			</script>
+
                             </div>
                         </div>
                         <!-- /block -->
@@ -153,5 +164,4 @@
             </div>
         </div>
 		<?php include('script.php'); ?>
-    </body>	
-</html>
+    </body>

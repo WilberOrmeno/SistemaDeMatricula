@@ -4,8 +4,6 @@
             <!--
            <a href="add_student.php" class="btn btn-inverse"><i class="icon-plus-sign icon-large"></i> Agregar alumno</a>-->
         </div>
-        <!--<a data-toggle="modal" href="#student_delete" id="delete"  class="btn btn-danger" name=""><i class="icon-trash icon-large"></i> Delete</a>
-    -->
         <thead>
         <tr>
             <th>Cod. alumno</th>
@@ -19,16 +17,24 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>20140143C</td>
-            <td>Wilber Javier</td>
-            <td>Ormeño</td>
-            <td>Vera</td>
-            <td>5°</td>
-            <td>994318344</td>
-            <td>wilber.ormeno@uni.pe</td>
-            <td><button id="abajo" class="btn btn-info" onclick="myFunction()">Editar</button></td>
-        </tr>
+        <?php
+        $query = mysqli_query(conectar(),"select * from alumnos")or die(mysqli_error(conectar()));
+        while($row = mysqli_fetch_array($query)) {
+            $id = $row['id_alumno'];
+            ?>
+            <tr>
+                <td><?php echo $row['cod_alumno']?></td>
+                <td><?php echo $row['nombres']; ?></td>
+                <td><?php echo $row['ape_paterno']; ?></td>
+                <td><?php echo $row['ape_materno']; ?></td>
+                <td><?php echo $row['grado']; ?></td>
+                <td><?php echo $row['telefono']; ?></td>
+                <td><?php echo $row['email']; ?></td>
+                <td><button id="abajo" class="btn btn-info" onclick="myFunction()">Editar</button></td>
+            </tr>
+            <?php
+        }
+        ?>
         </tbody>
     </table>
 

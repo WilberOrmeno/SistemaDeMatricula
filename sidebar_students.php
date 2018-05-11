@@ -7,7 +7,7 @@
                 <li><a href="add_student.php"><i class="icon-chevron-right icon-large"></i><i class="icon-th-list icon-large"></i> Registrar alumno</a></li>
                 <li ><a href="edit_student.php"><i class="icon-chevron-right icon-large"></i><i class="icon-money icon-large"></i> Editar alumno</a></li>
                 <li ><a href="printEnrollment.php"><i class="icon-chevron-right icon-large"></i><i class="icon-money icon-large"></i> Imprimir matrícula</a></li>
-                <li><a href="#"><i class="icon-chevron-right icon-large"></i><i class="icon-table icon-large"></i> Borrar </a></li
+                <li><a href="deleteStudent.php"><i class="icon-chevron-right icon-large"></i><i class="icon-table icon-large"></i> Borrar </a></li
             </ul>
     </center>
 </div>
