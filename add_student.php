@@ -119,21 +119,28 @@
                                 </div>
                             </form>
 			<script>
-			jQuery(document).ready(function($){
+			/*jQuery(document).ready(function($){
 				$("#add_student").submit(function(e){
 					e.preventDefault();
 					var this = $(e.target);
-					var formData = $(this).serialize();
-					$.ajax({
-						type: "POST",
-						url: "studentAdded.php",
-						data: formData,
-						success: function(html){
+					var  = $(this).serialize();
+                    $.ajax({
+                        data:  parametros,
+                        url:   'studentAdded.php',
+                        type:  'post',
+                        beforeSend: function () {
+                            $("#resultado").html("Procesando, espere por favor...");
+                        },
+                        success:  function (response) {
+                            location.reload()
+                            $("#resultado").html(response);
+                        }
+                    });
 
-						}
-					});
+
 				});
-			});
+
+			})*/
 
 
 

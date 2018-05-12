@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-05-2018 a las 14:30:28
+-- Tiempo de generación: 12-05-2018 a las 16:51:55
 -- Versión del servidor: 10.1.31-MariaDB
 -- Versión de PHP: 7.2.3
 
@@ -34,8 +34,9 @@ CREATE TABLE `alumnos` (
   `nombres` varchar(50) NOT NULL,
   `ape_materno` varchar(40) NOT NULL,
   `ape_paterno` varchar(40) NOT NULL,
-  `sexo` int(11) NOT NULL,
-  `grado` int(11) NOT NULL,
+  `sexo` varchar(15) NOT NULL,
+  `nivel` varchar(15) NOT NULL,
+  `grado` varchar(11) NOT NULL,
   `fecNacimiento` date NOT NULL,
   `telefono` varchar(9) NOT NULL,
   `dni` varchar(8) NOT NULL,
@@ -47,11 +48,8 @@ CREATE TABLE `alumnos` (
 -- Volcado de datos para la tabla `alumnos`
 --
 
-INSERT INTO `alumnos` (`id_alumno`, `cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `grado`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`) VALUES
-(1, '2135', 'Wilber Javier', 'Vera', 'Ormeño', 1, 3, '2018-04-04', '994318344', '72416642', 'wilber.ormeno@uni.pe', 'aqui'),
-(2, '213', '12', '4', '3', 1, 3, '1997-04-05', '994318344', '72241664', 'javierov2207@gmail.com', 'Urb. Villa Gloria Mz. A Lote 8 - Ate'),
-(3, '234', '32431', '242', '5654', 1, 1, '1997-04-04', '123', '23', '2323', '2323'),
-(4, '23234', '324', '23423', '23423', 1, 2, '2018-04-18', 'qwe', 'ewqe', 'qwe', 'wewe');
+INSERT INTO `alumnos` (`id_alumno`, `cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `nivel`, `grado`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`) VALUES
+(25, '44442', 'Daniela', 'Quispe', 'Rojas', '1', 'Primaria', '4to', '2018-05-14', '987654321', '13456798', 'aaaa', 'aaaa');
 
 -- --------------------------------------------------------
 
@@ -120,7 +118,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `periodo`

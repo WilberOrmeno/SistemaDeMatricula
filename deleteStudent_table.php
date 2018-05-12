@@ -46,7 +46,7 @@
                                 <!-- Modal Header -->
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="gridSystemModalLabel">¿Estás seguro de que quieres eliminar a <?php echo $row['nombres'].' '.$row['ape_paterno'].' '.$row['ape_materno']?>?</h4>
+                                    <h4 class="modal-title">¿Estás seguro de que quieres eliminar a <span id="resultado">0</span>?</h4>
                                 </div>
 
                                 <!-- Modal Body -->
@@ -60,7 +60,7 @@
                                 <div class="modal-footer">
                                     <center>
                                         <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">NO</button>
-                                        <button id="btnPrint" type="button" class="btn btn-success">SI</button>
+                                        <button id="btnDelete" type="button" class="btn btn-success" data-dismiss="modal">SI</button>
                                     </center>
                                 </div>
 
@@ -73,11 +73,51 @@
             <?php
             }
             ?>
+
             <script type="application/javascript">
+                var parametros = {};
                 $('input[type=button]' ).click(function() {
-                    bid = (this.id) ; // button ID
-                    console.log(this.id);
+                    this.sId = (this.id) ; // button ID
+                    parametros = {
+                        "id" : this.id
+                    };
+                    $.ajax({
+                        data:  parametros,
+                        url:   'getStudentInfo.php',
+                        type:  'post',
+                        beforeSend: function () {
+                            $("#resultado").html("Procesando, espere por favor...");
+                        },
+                        success:  function (response) {
+
+                            $("#resultado").html(response);
+                        }
+                    });
                 });
+
+                $('#btnDelete' ).click(function() {
+                        $.ajax({
+                            data:  parametros,
+                            url:   'deleting_student.php',
+                            type:  'post',
+                            beforeSend: function () {
+                                $("#").html("Procesando, espere por favor...");
+
+                            },
+                            success:  function (response) {
+                                $.jGrowl("Registro eliminado con éxito", { header: 'Eliminado' });
+                                setTimeout(location.reload.bind(location), 1500);
+                                $("#").html(response);
+                            }
+                        });
+                    });
+
+
             </script>
+
+
+
         </tbody>
+
     </table>
+    Resultado:

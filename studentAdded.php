@@ -15,12 +15,9 @@ $Email = $_POST['direccion'];
 $Direccion = $_POST['direccion'];
 
 $query = "INSERT INTO `alumnos`(`cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `nivel`, `grado`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`) 
-VALUES ($CodAlumno,$Nombres, $ApePaterno,$ApeMaterno,$Sexo,'$Nivel','$Grado','$FecNac',$Telefono,$DNI,$Email,$Direccion)";
+VALUES ($CodAlumno,'$Nombres', '$ApeMaterno','$ApePaterno','$Sexo','$Nivel','$Grado','$FecNac','$Telefono','$DNI','$Email','$Direccion')";
 $stmt = mysqli_query($con,$query);
 
 
 header("Location: add_student.php");
 ?>
-
-<
-
