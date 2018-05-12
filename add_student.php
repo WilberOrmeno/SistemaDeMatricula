@@ -44,7 +44,7 @@
                                 <div class="muted pull-left"><i class="icon-plus-sign icon-large"></i> Registrar alumno</div>
 						    </div>
                             <div class="block-content collapse in">						
-                            <form id="add_student" class="form-signin" method="post">
+                            <form id="add_student" action="studentAdded.php" class="form-signin" method="post">
                             <!-- span 4 -->
                                 <div class="uploader span2" onclick="$('#filePhoto').click()" style="height: 200px; width: 152px;" >
                                     <img id="imagePreview" src="images/uploadImage.jpg" style="">
@@ -64,80 +64,79 @@
                                 </div>
                                 <div class="span5">
                                     <label>SEXO:</label>
-                                    <select name="student_class" class="span9" required>
-                                        <option value=""> </option>
+                                    <select name="sexo" class="span9" required>
+                                        <option value=""><< Seleccione >></option>
+                                        <option value="1">Femenino</option>
+                                        <option value="2">Masculino</option>
+                                    </select>
+                                    <label>NIVEL:</label>
+                                    <select name="nivel" class="span9" required>
+                                        <option value=""><< Seleccione >></option>
+                                        <option value="Inicial">Inicial</option>
+                                        <option value="Primaria">Primaria</option>
+                                        <option value="Secundaria">Secundaria</option>
                                     </select>
                                     <label>GRADO:</label>
-                                    <select name="student_class" class="span9" required>
-                                        <option value=""> </option>
+                                    <select name="grado" class="span9" required>
+                                        <option value=""><< Seleccione >></option>
+                                        <option value="1ro">1ro</option>
+                                        <option value="2do">2do</option>
+                                        <option value="3ro">3ro</option>
+                                        <option value="4to">4to</option>
+                                        <option value="5to">5to</option>
+                                        <option value="6to">6to</option>
+
                                     </select>
                                     <label>FECHA DE NACIMIENTO:</label>
-                                    <input type="date" class="input-block-level span9"  name="dob" placeholder="Date of Birth">
+                                    <input type="date" class="input-block-level span9"  name="fecNac" placeholder="Date of Birth">
                                 </div>
                                 <div class="span12">
                                     <div class="span4">
                                         <label>TELÉFONO:</label>
-                                        <input type="text" class="  span11"  name="fname" placeholder="Teléfono" required>
+                                        <input type="text" class="  span11"  name="telefono" placeholder="Teléfono" required>
                                     </div>
                                     <div class="span4">
                                         <label>DNI:</label>
-                                        <input type="text" class="input-block-level span11"  name="fname" placeholder="DNI" required>
+                                        <input type="text" class="input-block-level span11"  name="dni" placeholder="DNI" required>
                                     </div>
                                     <div class="span4">
                                         <label>EMAIL:</label>
-                                        <input type="text" class="input-block-level span11"  name="fname" placeholder="Email" required>
+                                        <input type="text" class="input-block-level span11"  name="email" placeholder="Email" required>
                                     </div>
                                 </div>
                                 <div class="span12">
 
                                     <div class="span6 offset3">
                                         <label>DIRECCIÓN:</label>
-                                        <input type="text" class="input-block-level span11"  name="fname" placeholder="Dirección" required>
+                                        <input type="text" class="input-block-level span11"  name="direccion" placeholder="Dirección" required>
                                     </div>
                                 </div>
                                 <div class="span12">
                                     <center>
                                         <input type="button" class="btn btn-warning" onclick="formReset()" value="Cancelar">
-                                        <button class="btn btn-success">Guardar</button>
+                                        <button id="BtnGuardar" class="btn btn-success">Guardar</button>
                                     </center>
                                 </div>
                             </form>
 			<script>
-			/*jQuery(document).ready(function($){
+			jQuery(document).ready(function($){
 				$("#add_student").submit(function(e){
 					e.preventDefault();
 					var this = $(e.target);
 					var formData = $(this).serialize();
 					$.ajax({
 						type: "POST",
-						url: "save_stud.php",
+						url: "studentAdded.php",
 						data: formData,
 						success: function(html){
-							$.jGrowl("Student Successfully  Added", { header: 'Student Added' });
-							window.location = 'students.php';  
+
 						}
 					});
 				});
 			});
 
-			$(document).on('ready',function(){
-            $('#ButBuscar').click(function(){
-                var url = "UsuarioBuscado.php";
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data: $("#myForm").serialize(),
-                    success: function(data)
-                    {
-                        $('#resultado').html(data);
-                    }
-                });
-
-            });
-        });
 
 
-			*/
             var imageLoader = document.getElementById('filePhoto');
             imageLoader.addEventListener('change', handleImage, false);
 
@@ -165,3 +164,4 @@
         </div>
 		<?php include('script.php'); ?>
     </body>
+</html>

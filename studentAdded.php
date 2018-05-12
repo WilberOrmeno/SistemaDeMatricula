@@ -1,29 +1,26 @@
 <?php
+include("dbcon.php");
 $con=conectar();
+$CodAlumno = $_POST['codAlumno'];
+$ApePaterno = $_POST['apePaterno'];
+$ApeMaterno = $_POST['apeMaterno'];
+$Nombres = $_POST['nombres'];
+$Sexo = $_POST['sexo'];
+$Nivel= $_POST['nivel'];
+$Grado = $_POST['grado'];
+$FecNac = $_POST['fecNac'];
+$Telefono = $_POST['telefono'];
+$DNI = $_POST['dni'];
+$Email = $_POST['direccion'];
+$Direccion = $_POST['direccion'];
 
-$Tipo = $_POST['txtTipoUsuario'];
-$ID = $_POST['txtID'];
-$Login = $_POST['txtLogin'];
-$Password = $_POST['txtPassword'];
-$Nombre = $_POST['txtNombre'];
-$Fecha = $_POST['txtFecha'];
-$Estado = $_POST['txtEstado'];
+$query = "INSERT INTO `alumnos`(`cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `nivel`, `grado`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`) 
+VALUES ($CodAlumno,$Nombres, $ApePaterno,$ApeMaterno,$Sexo,'$Nivel','$Grado','$FecNac',$Telefono,$DNI,$Email,$Direccion)";
+$stmt = mysqli_query($con,$query);
 
 
-$insertado = "INSERT INTO `biblioteca`.`Usuarios` (`UsuarioID`, `UsuarioLogin`, `UsuarioNombre`, `UsuarioPassword`, `UsuarioNivel`,`UsuarioFecha`,`UsuarioEstado`) 
-VALUES ('$ID', '$Login', '$Nombre ', '$Password', '$Tipo','$Fecha','$Estado');
-";
-$stmt = mysqli_query($con,$insertado);
-
+header("Location: add_student.php");
 ?>
 
-<html>
-<body style="background-image: url(images/libros.jpg); color: white; font">
-<br><br><br><br><br>
+<
 
-<center><h2 style="color: white;">////////Usuario Correctamente Registrado//////////</h2></center><br><br><br>
-<center><form action="AgregarUsuario.php" method="POST"	>
-        <button class="btn-lg btn-danger" type="submit" value=""> Regresar </button>
-    </form></center>
-</body>
-</html>

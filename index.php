@@ -29,13 +29,13 @@
                         data: formData,
                         success: function(html){
                          if (html == 'true'){
-                            $.jGrowl("Cargando, espere por favor......", { sticky: true });
-                            $.jGrowl("Welcome to Delaroy Studios School System", { header: 'Access Granted' });
+                            $.jGrowl("Cargando, espere por favor...", { sticky: true });
+                            $.jGrowl("Bienvenido al sistema de matrícula", { header: 'Acceso concedido' });
                         var delay = 1000;
                             setTimeout(function(){ window.location = 'dashboard.php'  }, delay);
                         }else
                         {
-                        $.jGrowl("Please Check your username and Password", { header: 'Login Failed' });
+                        $.jGrowl("Por favor verifica tu nombre de usuario y contraseña", { header: 'Error al iniciar sesión' });
                         }
                         }
                     });

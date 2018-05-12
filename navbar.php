@@ -5,7 +5,7 @@ $periodo = mysqli_fetch_array($query);
 
 <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="navbar-inner">
-            <div class="container-fluid">
+            <div class="container-fluid" style="background-color: #4d9200 ">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
