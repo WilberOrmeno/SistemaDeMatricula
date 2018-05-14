@@ -1,35 +1,8 @@
-
 <style>
-    .form-group {
-        text-align: left;
-    }
-    .uploader {
-        position:relative;
-        overflow:hidden;
-        background:#f3f3f3;
-        border:2px dashed #e8e8e8;
-    }
 
-    #filePhoto{
-        position:absolute;
-        width:150px;
-        height:200px;
-        top:0px;
-        left:0;
-        z-index:2;
-        opacity:0;
-        cursor:pointer;
-    }
-
-    .uploader img{
-        position:absolute;
-        top:-1px;
-        left:-1px;
-        z-index:1;
-        border:none;
-    }
 </style>
 <body>
+Resultado <span id="resultado"></span>
 <div class="container-fluid">
     <div class="row-fluid">
 
@@ -49,8 +22,9 @@
                             </div>
 
                             <div class="span5">
+                                <input type="text" class="input-block-level span9"  name="fname" id="id" required>
                                 <label>CÓDIGO DE ALUMNO:</label>
-                                <input type="text" class="input-block-level span9"  name="fname" value="20140143C" required>
+                                <input type="text" class="input-block-level span9"  name="fname" id="codigo" required>
                                 <label>APELLIDO PATERNO:</label>
                                 <input type="text" class="input-block-level span9"  name="fname" value="Ormeño" required>
                                 <label>APELLIDO MATERNO:</label>

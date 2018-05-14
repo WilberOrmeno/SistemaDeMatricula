@@ -1,7 +1,8 @@
 <?php
 include("dbcon.php");
 $con=conectar();
-$CodAlumno = $_POST['codAlumno'];
+$Id = $_POST['id'];
+$CodAlumno = $_POST['codigo'];
 $ApePaterno = $_POST['apePaterno'];
 $ApeMaterno = $_POST['apeMaterno'];
 $Nombres = $_POST['nombres'];
@@ -14,10 +15,9 @@ $DNI = $_POST['dni'];
 $Email = $_POST['email'];
 $Direccion = $_POST['direccion'];
 
-$query = "INSERT INTO `alumnos`(`cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `nivel`, `grado`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`) 
-VALUES ($CodAlumno,'$Nombres', '$ApeMaterno','$ApePaterno','$Sexo','$Nivel','$Grado','$FecNac','$Telefono','$DNI','$Email','$Direccion')";
+$query = "UPDATE `alumnos` SET `cod_alumno`='$CodAlumno', `nombres`='$Nombres', `ape_materno`='$ApeMaterno', `ape_paterno`='$ApePaterno',
+ `sexo` = '$Sexo', `nivel` = '$Nivel', `grado` = '$Grado', `fecNacimiento` = '$FecNac', `telefono` = $Telefono, `dni` = '$DNI', 
+ `email` = '$Email', `direccion` = '$Direccion' WHERE  `id_alumno`=$Id";
 $stmt = mysqli_query($con,$query);
-
-echo "Realizado";
 
 ?>

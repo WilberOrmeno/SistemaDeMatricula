@@ -1,11 +1,5 @@
 
     <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
-        <div class="pull-right">
-            <!--
-           <a href="add_student.php" class="btn btn-inverse"><i class="icon-plus-sign icon-large"></i> Agregar alumno</a>-->
-        </div>
-        <!--<a data-toggle="modal" href="#student_delete" id="delete"  class="btn btn-danger" name=""><i class="icon-trash icon-large"></i> Delete</a>
-    -->
         <thead>
         <tr>
             <th>Cod. alumno</th>
@@ -37,26 +31,17 @@
                     <td><?php echo $row['email']; ?></td>
                     <td><input type="button" id="<?php echo $id?>" class="btn btn-primary" data-toggle="modal" data-target="#MyModal" value="Borrar"></td>
                     <div id="MyModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-
                         <div class="modal-dialog modal-lg">
-
-                            <!-- Modal Content: begins -->
                             <div class="modal-content">
-
-                                <!-- Modal Header -->
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     <h4 class="modal-title">¿Estás seguro de que quieres eliminar a <span id="resultado">0</span>?</h4>
                                 </div>
-
-                                <!-- Modal Body -->
                                 <div class="modal-body">
                                     <div class="body-message" id="imprimirEsto">
 
                                     </div>
                                 </div>
-
-                                <!-- Modal Footer -->
                                 <div class="modal-footer">
                                     <center>
                                         <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">NO</button>
@@ -65,8 +50,6 @@
                                 </div>
 
                             </div>
-                            <!-- Modal Content: ends -->
-
                         </div>
                     </div>
                 </tr>
@@ -89,8 +72,9 @@
                             $("#resultado").html("Procesando, espere por favor...");
                         },
                         success:  function (response) {
-
-                            $("#resultado").html(response);
+                            var res = response.split(",");
+                            console.log(res);
+                            $("#resultado").html(res[4]+' '+res[2]+' '+res[3]);
                         }
                     });
                 });
@@ -101,13 +85,10 @@
                             url:   'deleting_student.php',
                             type:  'post',
                             beforeSend: function () {
-                                $("#").html("Procesando, espere por favor...");
-
                             },
                             success:  function (response) {
                                 $.jGrowl("Registro eliminado con éxito", { header: 'Eliminado' });
                                 setTimeout(location.reload.bind(location), 1500);
-                                $("#").html(response);
                             }
                         });
                     });
@@ -120,4 +101,3 @@
         </tbody>
 
     </table>
-    Resultado:

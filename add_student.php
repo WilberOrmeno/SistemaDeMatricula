@@ -43,7 +43,7 @@
                             <div class="navbar navbar-inner block-header">
                                 <div class="muted pull-left"><i class="icon-plus-sign icon-large"></i> Registrar alumno</div>
 						    </div>
-                            <div class="block-content collapse in">						
+                            <div class="block-content collapse in">
                             <form id="add_student" action="studentAdded.php" class="form-signin" method="post">
                             <!-- span 4 -->
                                 <div class="uploader span2" onclick="$('#filePhoto').click()" style="height: 200px; width: 152px;" >
@@ -66,8 +66,8 @@
                                     <label>SEXO:</label>
                                     <select name="sexo" class="span9" required>
                                         <option value=""><< Seleccione >></option>
-                                        <option value="1">Femenino</option>
-                                        <option value="2">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                        <option value="Masculino">Masculino</option>
                                     </select>
                                     <label>NIVEL:</label>
                                     <select name="nivel" class="span9" required>
@@ -118,7 +118,50 @@
                                     </center>
                                 </div>
                             </form>
-			<script>
+
+
+                                <script type="application/javascript">
+                                    var parametros = {};
+                                    $('input[type=button]' ).click(function() {
+                                        this.sId = (this.id) ; // button ID
+                                        parametros = {
+                                            "id" : this.id
+                                        };
+                                        $.ajax({
+                                            data:  parametros,
+                                            url:   'getStudentInfo.php',
+                                            type:  'post',
+                                            beforeSend: function () {
+                                                $("#resultado").html("Procesando, espere por favor...");
+                                            },
+                                            success:  function (response) {
+
+                                                $("#resultado").html(response);
+                                            }
+                                        });
+                                    });
+
+                                    $('#btnDelete' ).click(function() {
+                                        $.ajax({
+                                            data:  parametros,
+                                            url:   'deleting_student.php',
+                                            type:  'post',
+                                            beforeSend: function () {
+                                                $("#").html("Procesando, espere por favor...");
+
+                                            },
+                                            success:  function (response) {
+                                                $.jGrowl("Registro eliminado con éxito", { header: 'Eliminado' });
+                                                setTimeout(location.reload.bind(location), 1500);
+                                                $("#").html(response);
+                                            }
+                                        });
+                                    });
+
+
+                                </script>
+
+                                <script>
 			/*jQuery(document).ready(function($){
 				$("#add_student").submit(function(e){
 					e.preventDefault();
