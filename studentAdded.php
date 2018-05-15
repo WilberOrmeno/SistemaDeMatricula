@@ -13,7 +13,10 @@ $Telefono = $_POST['telefono'];
 $DNI = $_POST['dni'];
 $Email = $_POST['email'];
 $Direccion = $_POST['direccion'];
-
+$foto=$_FILES["filePhoto"]["name"];
+$ruta=$_FILES["filePhoto"]["tmp_name"];
+$destino="FotoDocumentos/".$foto;
+copy($ruta,$destino);
 $query = "INSERT INTO `alumnos`(`cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `nivel`, `grado`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`) 
 VALUES ($CodAlumno,'$Nombres', '$ApeMaterno','$ApePaterno','$Sexo','$Nivel','$Grado','$FecNac','$Telefono','$DNI','$Email','$Direccion')";
 $stmt = mysqli_query($con,$query);
