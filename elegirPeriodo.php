@@ -20,7 +20,6 @@ include("header.php");
                         <div class="muted pull-left">ELEGIR PERIODO</div>
                     </div>
                     <div class="block-content collapse in">
-                        <form method="post" action="actualizarPeriodo.php" id="add_user">
 
                         <div class="span12">
 
@@ -55,14 +54,14 @@ include("header.php");
                             <div class="span4"></div>
                             <div class="span4">
                                 <center>
-                                    <button class="btn btn-success">Confirmar</button>
+                                    <input type="button" href="javascript:;" onclick="realizaProceso($('#periodSelected').val());return false;" class="btn btn-info"  value="Confirmar"/>
                                 </center>
                             </div>
 
 
 
                         </div>
-                        </form>
+
                     </div>
                     <!-- /block -->
 
@@ -83,6 +82,24 @@ include("header.php");
 
         return true;
     }
+    function realizaProceso(periodo){
+        var parametros = {
+            "periodo" : periodo,
+        };
+        $.ajax({
+            data:  parametros,
+            url:   'actualizarPeriodo.php',
+            type:  'post',
+            beforeSend: function () {
+
+            },
+            success:  function (response) {
+               // $.jGrowl("Periodo actualizado con éxito", { header: 'Actualizado' });
+                setTimeout(location.reload.bind(location), 2000);
+            }
+        });
+    }
+
     //-->
 </SCRIPT>
 </body>

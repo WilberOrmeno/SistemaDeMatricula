@@ -6,6 +6,7 @@
             <th>Nombres</th>
             <th>Ape. Paterno</th>
             <th>Ape. Materno</th>
+            <th>Nivel</th>
             <th>Grado</th>
             <th>Telefono</th>
             <th>Email</th>
@@ -26,10 +27,11 @@
                     <td><?php echo $row['nombres']; ?></td>
                     <td><?php echo $row['ape_paterno']; ?></td>
                     <td><?php echo $row['ape_materno']; ?></td>
+                    <td><?php echo $row['nivel']; ?></td>
                     <td><?php echo $row['grado']; ?></td>
                     <td><?php echo $row['telefono']; ?></td>
                     <td><?php echo $row['email']; ?></td>
-                    <td><input type="button" id="<?php echo $id?>" class="btn btn-primary" data-toggle="modal" data-target="#MyModal" value="Borrar"></td>
+                    <td><input type="button" id="<?php echo $id?>" class="btn btn-info" data-toggle="modal" data-target="#MyModal" value="Borrar" ></td>
                     <div id="MyModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">

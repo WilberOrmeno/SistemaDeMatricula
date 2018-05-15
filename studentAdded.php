@@ -1,7 +1,7 @@
 <?php
 include("dbcon.php");
 $con=conectar();
-$CodAlumno = $_POST['codAlumno'];
+$CodAlumno = $_POST['codigo'];
 $ApePaterno = $_POST['apePaterno'];
 $ApeMaterno = $_POST['apeMaterno'];
 $Nombres = $_POST['nombres'];

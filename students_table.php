@@ -5,6 +5,7 @@
         <th>Nombres</th>
         <th>Ape. Paterno</th>
         <th>Ape. Materno</th>
+        <th>Nivel</th>
         <th>Grado</th>
         <th>Telefono</th>
         <th>Email</th>
@@ -23,6 +24,7 @@
                     <td><?php echo $row['nombres']; ?></td>
                     <td><?php echo $row['ape_paterno']; ?></td>
                     <td><?php echo $row['ape_materno']; ?></td>
+                    <td><?php echo $row['nivel']; ?></td>
                     <td><?php echo $row['grado']; ?></td>
                     <td><?php echo $row['telefono']; ?></td>
                     <td><?php echo $row['email']; ?></td>
