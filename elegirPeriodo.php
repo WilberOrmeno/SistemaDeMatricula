@@ -1,70 +1,46 @@
-<?php
-include("header.php");
-?>
-<body >
-<?php include('navbar.php')?>
-
+<?php include("header.php") ?>
+<?php include('navbar.php') ?>
+<style>
+    div.warning {
+        background-color: 		red;
+        color: 					orange;
+    }
+</style>
+<link href="vendors/jGrowl/jquery.jgrowl.css" rel="stylesheet" media="screen">
+<script src="vendors/jGrowl/jquery.jgrowl.js"></script>
 <div class="container-fluid" id="">
-
     <div class="row-fluid">
         <?php include('sidebar_periodo.php'); ?>
-        <!--/span-->
         <div class="span9" id="content">
-            <div class="row-fluid"></div>
-
             <div class="row-fluid">
-
-                <!-- block -->
                 <div id="block_bg" class="block">
                     <div class="navbar navbar-inner block-header">
                         <div class="muted pull-left">ELEGIR PERIODO</div>
                     </div>
                     <div class="block-content collapse in">
-
                         <div class="span12">
-
                             <div class="span4">
-
                             </div>
-
-
                             <div class="span4">
                                 <center>
-
-                                    <center>
-                                        <div class="input-group">
-                                            <input type='text' class="form-control" name="periodSelected" id="datepicker" maxlength="4" onkeypress="return isNumberKey(event)" placeholder="--Click para seleccionar--" required/>
-                                            <span class="input-group-addon">
+                                    <div class="input-group">
+                                        <input type='text' class="form-control" name="periodSelected" id="datepicker" maxlength="4" onkeypress="return isNumberKey(event)" placeholder="--Click para seleccionar--" required/>
+                                        <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                        </div>
-                                    </center>
-
-                                    <script type="application/javascript">
-                                        $("#datepicker").datepicker({
-                                            format: "yyyy",
-                                            viewMode: "years",
-                                            minViewMode: "years",
-                                            autoclose: true,
-                                        });</script>
+                                        </span>
+                                    </div>
                                 </center>
-                            </div>
-                            <div class="span4"></div>
-                            <div class="span4"></div>
-                            <div class="span4"></div>
-                            <div class="span4">
+                                </div>
+                                <div class="span4"></div>
+                                <div class="span4"></div>
+                                <div class="span4"></div>
+                                <div class="span4">
                                 <center>
-                                    <input type="button" href="javascript:;" onclick="realizaProceso($('#periodSelected').val());return false;" class="btn btn-info"  value="Confirmar"/>
+                                    <input type="button" href="javascript:;" onclick="realizaProceso($('#datepicker').val());return false;" class="btn btn-info"  value="Confirmar"/>
                                 </center>
                             </div>
-
-
-
                         </div>
-
                     </div>
-                    <!-- /block -->
-
                 </div>
             </div>
 
@@ -72,34 +48,46 @@ include("header.php");
     </div>
 
 </div>
-<SCRIPT language=Javascript>
-    <!--
+<script language=Javascript>
+    $("#datepicker").datepicker({
+        format: "yyyy",
+        viewMode: "years",
+        minViewMode: "years",
+        autoclose: true,
+    });
     function isNumberKey(evt)
     {
         var charCode = (evt.which) ? evt.which : event.keyCode
         if (charCode > 31 && (charCode < 48 || charCode > 57))
             return false;
-
         return true;
     }
     function realizaProceso(periodo){
-        var parametros = {
-            "periodo" : periodo,
-        };
-        $.ajax({
-            data:  parametros,
-            url:   'actualizarPeriodo.php',
-            type:  'post',
-            beforeSend: function () {
+        if(periodo == 0 || periodo == null || periodo ==""){
+            $.jGrowl("No has ingresado un periodo válido", {
+                theme:  'warning',
+                speed:  'slow',
+                header: '¡Alto!' });
+        }else{
+            var parametros = {
+                "periodo" : periodo,
+            };
 
-            },
-            success:  function (response) {
-               // $.jGrowl("Periodo actualizado con éxito", { header: 'Actualizado' });
-                setTimeout(location.reload.bind(location), 2000);
-            }
-        });
+            $.ajax({
+                data:  parametros,
+                url:   'actualizarPeriodo.php',
+                type:  'post',
+                beforeSend: function () {
+                },
+                success:  function (response) {
+                    $.jGrowl("Periodo actualizado con éxito", {
+
+                        header: 'Actualizado' });
+                    setTimeout(location.reload.bind(location), 2000);
+                }
+            });
+        }
+
     }
 
-    //-->
-</SCRIPT>
-</body>
+</script>

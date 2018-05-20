@@ -12,8 +12,6 @@
     </tr>
     </thead>
     <tbody>
-
-
             <?php
             $query = mysqli_query(conectar(),"select * from alumnos")or die(mysqli_error(conectar()));
             while($row = mysqli_fetch_array($query)) {

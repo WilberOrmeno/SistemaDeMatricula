@@ -1,31 +1,21 @@
 <?php include('header.php'); ?>
 <style>
-    .form-group {
-        text-align: left;
-    }
     .uploader {
-        position:relative;
+        top: 50px;
+        left: 10px;
         overflow:hidden;
         background:#f3f3f3;
         border:2px dashed #e8e8e8;
     }
 
     #filePhoto{
-        position:absolute;
-        width:150px;
-        height:200px;
-        top:0px;
-        left:0;
-        z-index:2;
-        opacity:0;
+        width:120px;
+        height:150px;
         cursor:pointer;
     }
-
     .uploader img{
-        position:absolute;
         top:-1px;
         left:-1px;
-        z-index:1;
         border:none;
     }
 </style>
@@ -33,7 +23,7 @@
     <?php include('navbar.php')?>
 
     <div class="container-fluid">
-            <div class="row-fluid">
+                <div class="row-fluid">
                 <?php include('sidebar_addStudents.php'); ?>
 
                 <div class="span9" id="">
@@ -44,7 +34,7 @@
                                 <div class="muted pull-left"><i class="icon-plus-sign icon-large"></i> Registrar alumno</div>
 						    </div>
                             <div class="block-content collapse in">
-                                <div class="uploader span2" onclick="$('#filePhoto').click()" style="height: 200px; width: 152px;" >
+                                <div class="uploader span2" onclick="$('#filePhoto').click()" style="height: 150px; width: 120px;" >
                                     <img id="imagePreview" src="images/uploadImage.jpg" style="">
                                     <input type="file" name="userprofile_picture" id="filePhoto" accept="image/*"/>
                                 </div>
