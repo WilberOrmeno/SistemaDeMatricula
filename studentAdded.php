@@ -1,7 +1,7 @@
 <?php
 include("dbcon.php");
 $con=conectar();
-$CodAlumno = $_POST['codigo'];
+$CodAlumno = $_POST['codAlumno'];
 $ApePaterno = $_POST['apePaterno'];
 $ApeMaterno = $_POST['apeMaterno'];
 $Nombres = $_POST['nombres'];
@@ -13,14 +13,32 @@ $Telefono = $_POST['telefono'];
 $DNI = $_POST['dni'];
 $Email = $_POST['email'];
 $Direccion = $_POST['direccion'];
-$foto=$_FILES["filePhoto"]["name"];
-$ruta=$_FILES["filePhoto"]["tmp_name"];
-$destino="FotoDocumentos/".$foto;
+$foto=$_FILES["userprofile_picture"]["name"];
+$ruta=$_FILES["userprofile_picture"]["tmp_name"];
+$destino="FotosAlumnos/".$foto;
 copy($ruta,$destino);
-$query = "INSERT INTO `alumnos`(`cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `nivel`, `grado`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`) 
-VALUES ($CodAlumno,'$Nombres', '$ApeMaterno','$ApePaterno','$Sexo','$Nivel','$Grado','$FecNac','$Telefono','$DNI','$Email','$Direccion')";
+$query = "INSERT INTO `alumnos`(`cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `nivel`, `grado`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`, `foto`) 
+VALUES ($CodAlumno,'$Nombres', '$ApeMaterno','$ApePaterno','$Sexo','$Nivel','$Grado','$FecNac','$Telefono','$DNI','$Email','$Direccion','$destino')";
 $stmt = mysqli_query($con,$query);
 
-echo "Realizado";
+$ApePaternoApoderado = $_POST['nombresApoderado'];
+$ApeMaternoApoderado = $_POST['nombresApoderado'];
+$NombresApoderado = $_POST['nombresApoderado'];
+$RelacionEstudiante = $_POST['relacionEstudiante'];
+$celularApoderado = $_POST['celularApoderado'];
+$emailApoderado = $_POST['emailApoderado'];
+
+
+$query = "SELECT * FROM `alumnos`";
+$stmt = mysqli_query($con,$query);
+$id = 0;
+while($extraido = mysqli_fetch_array($stmt) ) {
+    $id = $extraido['id_alumno'];
+}
+
+$query2 = "INSERT INTO `apoderados`(`id_alumno`, `ape_paterno`, `ape_materno`, `nombres`, `relacion`, `celular`, `email`) 
+VALUES ($id,'$ApePaternoApoderado', '$ApeMaternoApoderado','$NombresApoderado','$RelacionEstudiante','$celularApoderado','$emailApoderado')";
+$stmt2 = mysqli_query($con,$query2);
 
 ?>
+

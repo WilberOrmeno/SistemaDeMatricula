@@ -1,8 +1,10 @@
 <?php
 include "dbcon.php";
 $con = conectar();
-$id = $_POST['id'];
-$query = "SELECT * FROM `alumnos` WHERE `id_alumno` = '$id'";
+$nivel = $_POST['nivel'];
+$grado = $_POST['grado'];
+$seccion = $_POST['seccion'];
+$query = "SELECT * FROM `alumnos` WHERE ( `nivel`='$nivel' AND `grado`='$grado' AND `seccion`='$seccion')";
 $stmt = mysqli_query($con,$query);
 $data = '';
 while($extraido = mysqli_fetch_array($stmt) ) {
@@ -11,15 +13,9 @@ while($extraido = mysqli_fetch_array($stmt) ) {
         .$extraido['ape_paterno'].','
         .$extraido['ape_materno'].','
         .$extraido['nombres'].','
-        .$extraido['sexo'].','
-        .$extraido['nivel'].','
-        .$extraido['grado'].','
-        .$extraido['fecNacimiento'].','
         .$extraido['telefono'].','
         .$extraido['dni'].','
-        .$extraido['email'].','
-        .$extraido['direccion'].','
-        .$extraido['foto'];
+        .$extraido['direccion'].'|';
 }
 echo $data;
 ?>

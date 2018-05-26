@@ -69,6 +69,7 @@
             beforeSend: function () {
             },
             success:  function (response) {
+                console.log(response);
                 var res = response.split(",");
                 document.getElementById('id').value = res[0];
                 document.getElementById('codAlumno').value = res[1];
@@ -83,6 +84,8 @@
                 document.getElementById('dni').value = res[10];
                 document.getElementById('email').value = res[11];
                 document.getElementById('direccion').value = res[12];
+                document.getElementById('imagePreview').src = res[13];
+
             }
         });
 
