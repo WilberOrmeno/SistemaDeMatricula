@@ -9,13 +9,64 @@
                 <div class="span9" id="">
                      <div class="row-fluid">
                         <!-- block -->
-                        <div  id="block_bg" class="block">
+                        <div  id="block_bg" class="block" style="height: 550px">
                             <div class="navbar navbar-inner block-header">
                                 <div class="muted pull-left"><i class="icon-plus-sign icon-large"></i> Registrar alumno</div>
 						    </div>
+
                             <div class="block-content collapse in">
                                 <form enctype="multipart/form-data" id="formuploadajax" method="post">
-                                    <div id="infoAlumno" style="display: block;">
+                                    <div id="documentacionAlumno" style="display: block; height: 550px">
+                                        <div class="span12">
+                                            <h3>DOCUMENTOS</h3>
+                                        </div>
+                                        <div class="span3 offset3">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="1" name="dniNino" style="height: 40px;margin: -2px 0 0">COPIA DNI NIÑO
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="1" name="dniApoderado" style="height: 40px;margin: -2px 0 0">COPIA DNI APODERADO
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="1" name="partidaNacimiento" style="height: 40px;margin: -2px 0 0">PARTIDA DE NACIMIENTO
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="1" name="certificadoEstudios" style="height: 40px;margin: -2px 0 0">CERTIFICADO DE ESTUDIOS
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="1" name="resTraslado" style="height: 40px;margin: -2px 0 0">RESOLUCIÓN DE TRASLADO
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="1" name="pagoMatricula" style="height: 40px;margin: -2px 0 0">PAGO DE MATRÍCULA
+                                            </label>
+                                        </div>
+                                        <div class="span5">
+                                            <label class="checkbox-inline">
+                                                <input type="file" value="" style="height: 40px;margin: -2px 0 0">
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="file" value="" style="height: 40px;margin: -2px 0 0">
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="file" value="" style="height: 40px;margin: -2px 0 0">
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="file" value="" style="height: 40px;margin: -2px 0 0">
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="file" value="" style="height: 40px;margin: -2px 0 0">
+                                            </label>
+                                        </div>
+
+                                        <div class="span12" style="position: absolute; z-index: 100 !important;   top: 450px">
+
+                                            <center>
+                                                <input type="button" class="btn btn-warning" onclick="formReset()" value="Cancelar">
+                                                <input type="button" id="next1" class="btn btn-info" value="Siguiente"/>
+                                            </center>
+                                        </div>
+                                    </div>
+                                    <div id="infoAlumno" style="display: none; height: 550px">
                                         <div class="span12">
                                             <h3>DATOS DEL ALUMNO</h3>
                                         </div>
@@ -56,8 +107,6 @@
                                             <label>SECCIÓN:</label>
                                             <select name="seccion" id="seccion" class="span9" required>
                                                 <option value=""><< Seleccione >></option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
                                             </select>
                                         </div>
                                         <div class="span12">
@@ -87,15 +136,16 @@
                                                 <input type="text" class="input-block-level span11" name="direccion" id="direccion" placeholder="Dirección" required>
                                             </div>
                                         </div>
-                                        <div class="span12">
+                                        <div class="span12" style="position: absolute; z-index: 100 !important;   top: 450px">
                                             <center>
+                                                <input type="button" class="btn btn-success" id="previous1" value="Anterior">
                                                 <input type="button" class="btn btn-warning" onclick="formReset()" value="Cancelar">
-                                                <input type="button" id="next" class="btn btn-info" value="Siguiente"/>
+                                                <input type="button" id="next2" class="btn btn-info" value="Siguiente"/>
 
                                             </center>
                                         </div>
                                     </div>
-                                    <div id="infoApoderado" style="display: none;">
+                                    <div id="infoApoderado" style="display: none; height: 550px">
                                         <div class="span12">
                                             <h3>DATOS DEL APODERADO</h3>
                                         </div>
@@ -115,15 +165,14 @@
                                                 <input type="text" class="input-block-level span11"  name="celularApoderado" placeholder="Celular" onkeydown='return(event.which >= 48 && event.which <= 57)
                                                 || event.which ==8 || event.which == 46' maxlength ="9" required>
                                                 <label for="emailApoderado">Correo electrónico</label>
-                                                <input type="text" class="input-block-level span11" id="emailApoderado" placeholder="Correo electronico">
+                                                <input type="text" class="input-block-level span11" name="emailApoderado" placeholder="Correo electronico">
                                             </div>
                                         </div>
-                                        <div class="span12">
+                                        <div class="span12" style="position: absolute; z-index: 500 !important;   top: 450px">
                                             <center>
-                                                <input type="button" class="btn btn-success" id="previous" value="Anterior">
+                                                <input type="button" class="btn btn-success" id="previous2" value="Anterior">
                                                 <input type="button" class="btn btn-warning" onclick="formResetAll()" value="Cancelar">
                                                 <input type="submit" class="btn btn-info"  value="Guardar"/>
-
                                             </center>
                                         </div>
                                     </div>
@@ -139,6 +188,7 @@
     </body>
 <script type="application/javascript">
     var options="";
+    var nivel;
     $("#nivel").on('change',function(){
         var value=$(this).val();
         if(value=="Inicial")
@@ -196,6 +246,34 @@
         });
     });
 
+    $("#grado").on('change',function() {
+        var grado = $(this).val();
+
+        console.log();
+        var parametros = {
+            "grado" : grado,
+            "nivel" : $("#nivel").val()
+        };
+
+        $.ajax({
+            data:  parametros,
+            url:   'getSecciones.php',
+            type:  'post',
+            beforeSend: function () {
+            },
+            success:  function (response) {
+                var res2 = response.split(',');
+                var res = res2.sort();
+                options='<option><< Seleccione >></option>'
+                for(var i = 1; i < res.length; i++){
+                    options +='<option value="'+res[i]+'">'+res[i]+'</option>'
+                }
+                $("#seccion").html(options);
+            }
+        });
+
+    });
+
     var imageLoader = document.getElementById('filePhoto');
     imageLoader.addEventListener('change', handleImage, false);
 
@@ -215,15 +293,28 @@
     function formResetAll()
     {
         document.getElementById("formuploadajax").reset();
-        $("#infoAlumno").show();
+        $("#documentacionAlumno").show();
+        $("#infoAlumno").hide();
         $("#infoApoderado").hide();
     }
 
-    $("#next").click(function(){
+    $("#next1").click(function(){
+        $("#documentacionAlumno").hide();
+        $("#infoAlumno").show();
+        $("#infoApoderado").hide();
+    });
+    $("#next2").click(function(){
+        $("#documentacionAlumno").hide();
         $("#infoAlumno").hide();
         $("#infoApoderado").show();
     });
-    $("#previous").click(function(){
+    $("#previous1").click(function(){
+        $("#documentacionAlumno").show();
+        $("#infoAlumno").hide();
+        $("#infoApoderado").hide();
+    });
+    $("#previous2").click(function(){
+        $("#documentacionAlumno").hide();
         $("#infoAlumno").show();
         $("#infoApoderado").hide();
     });

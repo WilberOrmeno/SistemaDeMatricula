@@ -4,8 +4,8 @@
         <div class="container-fluid">
             <div class="row-fluid">
                 <?php include('sidebar_dashboard.php'); ?>
-                <div class="span8" style="padding-top: 5%;">
-                    <img src="images/dashboard.png" alt="" style="border: 1px dashed darkblue; border-radius: 15px">
+                <div class="span8" style="padding-top: 5%; padding-left: 13%">
+                    <img src="images/cetapsi-sinfondo.png" alt="" style="opacity: 0.2; width: 35%; position: absolute !important;">
                 </div>
             </div>
         </div>

@@ -100,26 +100,65 @@
                 header: '¡Alto!' });
         }else{
             var parametros = {
-                "nivel" : nivel,
                 "grado" : grado,
-                "seccion" : seccion
+                "nivel" : $("#nivel").val()
             };
 
             $.ajax({
                 data:  parametros,
-                url:   'agregarSeccion.php',
+                url:   'getSecciones.php',
                 type:  'post',
                 beforeSend: function () {
                 },
                 success:  function (response) {
-                    $.jGrowl("Sección agregada con éxito", {
+                    console.log(response);
+                    var res = response.split(',');
+                    var encontrado = false;
+                    $.each(res, function (index , value) {
+                        if(seccion.toUpperCase() === value)
+                            encontrado = true;
+                    });
 
-                        header: 'Agregado' });
-                    setTimeout(location.reload.bind(location), 2000);
+                    if (!encontrado) {
+                        var parametros2 = {
+                            "nivel" : nivel,
+                            "grado" : grado,
+                            "seccion" : seccion.toUpperCase()
+                        };
+
+                        $.ajax({
+                            data:  parametros2,
+                            url:   'agregarSeccion.php',
+                            type:  'post',
+                            beforeSend: function () {
+                            },
+                            success:  function (response) {
+                                $.jGrowl("Sección agregada con éxito", {
+                                    header: 'Agregado' });
+                                setTimeout(location.reload.bind(location), 2000);
+                            }
+                        });
+                    }
+                    else {
+                        $.jGrowl("Esa sección ya se encuentra registrada", {
+                            theme:  'warning',
+                            speed:  'slow',
+                            header: '¡Alto!' });
+                    }
+
+
                 }
             });
+
         }
 
     }
+    $("#grado").on('change',function() {
+        var grado = $(this).val();
+
+        console.log();
+
+
+    });
 
 </script>

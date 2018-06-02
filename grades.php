@@ -16,6 +16,7 @@
                 <div id="block_bg" class="block">
                     <div class="navbar navbar-inner block-header">
                         <div class="muted pull-left">BUSCAR POR SECCIÓN</div>
+                        <input type="button" id="imprimir" onclick="printDiv()" class="btn btn-danger" style="display: none; margin-left: 500px" value="Imprimir"/>
                     </div>
                     <div class="block-content collapse in">
                         <div class="span12">
@@ -41,17 +42,15 @@
                                 <label align="left" style="margin-left: 45px" >SECCIÓN:</label>
                                 <select name="seccion" id="seccion" class="span9" required>
                                     <option value=""><< Seleccione >></option>
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
                                 </select>
-                                <input type="button" href="javascript:;" onclick="guardar($('#nivel').val(),
+                                <input type="button" href="javascript:;" onclick="obtener($('#nivel').val(),
                                                                                                  $('#grado').val(),
                                                                                                  $('#seccion').val());return false;"
                                        class="btn btn-info"  value="Buscar alumnos"/>
                             </div>
                         </div>
                     </div>
-                    <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
+                    <table cellpadding="0" cellspacing="0" border="0" class="table" id="tabla" style="display: none;">
                         <thead>
                         <tr>
                             <th>Cod. alumno</th>
@@ -64,16 +63,6 @@
                         </tr>
                         </thead>
                         <tbody>
-
-                            <tr>
-                                <td><label id="codAlumno"></label></td>
-                                <td><label id="nombres"></label></td>
-                                <td><label id="apePaterno"></label></td>
-                                <td><label id="apeMaterno"></label></td>
-                                <td><label id="telefono"></label></td>
-                                <td><label id="dni"></label></td>
-                                <td><label id="direccion"></label></td>
-                            </tr>
 
                         </tbody>
                     </table>
@@ -122,14 +111,42 @@
         else
             $("#grado").find('option').remove()
     });
+    $("#grado").on('change',function() {
+        var grado = $(this).val();
 
-    function guardar(nivel, grado, seccion){
+        console.log();
+        var parametros = {
+            "grado" : grado,
+            "nivel" : $("#nivel").val()
+        };
+
+        $.ajax({
+            data:  parametros,
+            url:   'getSecciones.php',
+            type:  'post',
+            beforeSend: function () {
+            },
+            success:  function (response) {
+                var res2 = response.split(',');
+                var res = res2.sort();
+                options='<option><< Seleccione >></option>'
+                for(var i = 1; i < res.length; i++){
+                    options +='<option value="'+res[i]+'">'+res[i]+'</option>'
+                }
+                $("#seccion").html(options);
+            }
+        });
+
+    });
+    function obtener(nivel, grado, seccion){
         if(seccion == "" || seccion == null || seccion == undefined){
             $.jGrowl("No has ingresado una sección válida", {
                 theme:  'warning',
                 speed:  'slow',
                 header: '¡Alto!' });
         }else{
+            $("#imprimir").show();
+
             var parametros = {
                 "nivel" : nivel,
                 "grado" : grado,
@@ -143,21 +160,41 @@
                 beforeSend: function () {
                 },
                 success:  function (response) {
+                    $("#tabla").show();
                     console.log(response);
-                    var res = response.split(",");
-                    console.log(res)
-                    $("#codAlumno").html(res[1]);
-                    $("#apePaterno").html(res[2]);
-                    $("#apeMaterno").html(res[3]);
-                    $("#nombres").html(res[4]);
-                    $("#telefono").html(res[5]);
-                    $("#dni").html(res[6]);
-                    $("#direccion").html(res[7]);
+                    console.log('');
+                    var data = response.split('|');
+                    var i = 0;
+                    $.each(data, function (index, element) {
+                        var res = element.split(',');
+                        if(i<res.length-1)
+                        {
+                            var nuevafila= "<tr><td>" +
+                                res[1] + "</td><td>" +
+                                res[2] + "</td><td>" +
+                                res[3] + "</td><td>" +
+                                res[4] + "</td><td>" +
+                                res[5] + "</td><td>" +
+                                res[6] + "</td><td>" +
+                                res[7] + "</td></tr>";
+                            $("#tabla").append(nuevafila);
+                            i++;
+                        }
 
+                    });
                 }
             });
         }
 
     }
 
+</script>
+<script>
+    function printDiv(){
+        var printContents = document.getElementById("tabla").innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
 </script>
