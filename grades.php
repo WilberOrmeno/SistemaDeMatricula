@@ -50,7 +50,16 @@
                             </div>
                         </div>
                     </div>
-                    <table cellpadding="0" cellspacing="0" border="0" class="table" id="tabla" style="display: none;">
+                    <div id="imprimirEsto">
+                        <div style="margin-left: 40px"    >
+                        <label id="lniv" for="niv" style="display: none; left: 20px;">Nivel</label>
+                        <input type="text" id="niv" value="Secundaria" style="display: none; left: 20px;" disabled>
+                        <label id="lgr" for="gr" style="display: none; left: 20px;">Grado</label>
+                        <input type="text" id="gr" value="5to" style="display: none; left: 20px;" disabled>
+                        <label id="lsec" for="sec" style="display: none; left: 20px;">Seccion</label>
+                        <input type="text" id="sec" value="A" style="display: none; left: 20px;" disabled>
+                        </div>
+                        <table cellpadding="0" cellspacing="0" border="0" class="table" id="tabla" style="display: none;">
                         <thead>
                         <tr>
                             <th>Cod. alumno</th>
@@ -66,7 +75,7 @@
 
                         </tbody>
                     </table>
-
+                    </div>
 
                 </div>
             </div>
@@ -146,6 +155,12 @@
                 header: '¡Alto!' });
         }else{
             $("#imprimir").show();
+            $("#lgr").show();
+            $("#gr").show();
+            $("#niv").show();
+            $("#lniv").show();
+            $("#sec").show();
+            $("#lsec").show();
 
             var parametros = {
                 "nivel" : nivel,
@@ -189,12 +204,21 @@
     }
 
 </script>
+<script src="bootstrap/js/html2canvas.js"></script>
+<script src="bootstrap/js/html2canvas.min.js"></script>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 <script>
     function printDiv(){
-        var printContents = document.getElementById("tabla").innerHTML;
-        var originalContents = document.body.innerHTML;
-        document.body.innerHTML = printContents;
-        window.print();
-        document.body.innerHTML = originalContents;
+
+        var element = document.getElementById("imprimirEsto");
+        html2canvas(element,{  width: 650}).then(function(canvas) {
+            var imgData = canvas.toDataURL(
+                'image/png', 1.0);
+            var doc = new jsPDF('p', 'mm', [297, 210]); //210mm wide and 297mm high
+
+            doc.addImage(imgData, 'PNG', 10, 10);
+            doc.save('ListaAlumnos.pdf');
+
+        });
     }
 </script>
