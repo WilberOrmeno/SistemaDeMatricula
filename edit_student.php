@@ -77,12 +77,18 @@
                                     <label>GRADO:</label>
                                     <select name="grado" id="grado" class="span9" required>
                                         <option value=""><< Seleccione >></option>
-
                                     </select>
-                                    <label>FECHA DE NACIMIENTO:</label>
-                                    <input type="date" class="input-block-level span9" name="fecNac" id="fecNac" placeholder="Date of Birth">
+                                    <label>SECCIÓN:</label>
+
+                                    <select name="seccion" id="seccion" class="span9" required>
+                                        <option value=""><< Seleccione >></option>
+                                    </select>
                                 </div>
                                 <div class="span12">
+                                    <div class="span4">
+                                        <label>FECHA DE NACIMIENTO:</label>
+                                        <input type="date" class="input-block-level span9" name="fecNac" id="fecNac" placeholder="Date of Birth">
+                                    </div>
                                     <div class="span4">
                                         <label>TELÉFONO:</label>
                                         <input type="text" class="span11" name="telefono" id="telefono" placeholder="Teléfono" required>
@@ -91,14 +97,15 @@
                                         <label>DNI:</label>
                                         <input type="text" class="input-block-level span11" name="dni" id="dni" placeholder="DNI" required>
                                     </div>
-                                    <div class="span4">
+
+
+                                </div>
+                                <div class="span12">
+                                    <div class="span5 offset1">
                                         <label>EMAIL:</label>
                                         <input type="text" class="input-block-level span11" name="email" id="email" placeholder="Email" required>
                                     </div>
-                                </div>
-                                <div class="span12">
-
-                                    <div class="span6 offset3">
+                                    <div class="span5">
                                         <label>DIRECCIÓN:</label>
                                         <input type="text" class="input-block-level span11" name="direccion" id="direccion" placeholder="Dirección" required>
                                     </div>
@@ -106,7 +113,7 @@
                                 <div class="span12">
                                     <center>
                                         <input type="button" class="btn btn-warning" onclick="formReset()" value="Cancelar">
-                                        <input type="submit" class="btn btn-info"  value="Guardar"/>
+                                        <input type="button" class="btn btn-info" id="guardar" value="Guardar"/>
 
                                     </center>
                                 </div>
@@ -141,6 +148,7 @@
     var options="";
     $("#nivel").on('change',function(){
         var value=$(this).val();
+        console.log(value)
         if(value=="Inicial")
         {
             options="<option><< Seleccione >></option>"
@@ -175,63 +183,38 @@
     });
 
     $(function(){
-        $("#formuploadajax").on("submit", function(e){
+        $("#guardar").on("click", function(e){
             e.preventDefault();
-            var f = $(this);
-            var formData = new FormData(document.getElementById("formuploadajax"));
-            formData.append("dato", "valor");
+            var parametros = {
+                "id" : document.getElementById("id").value,
+                "codigo": document.getElementById("codAlumno").value,
+                "apePaterno": document.getElementById("apePaterno").value,
+                "apeMaterno": document.getElementById("apeMaterno").value,
+                "nombres": document.getElementById("nombres").value,
+                "sexo": document.getElementById("sexo").value,
+                "nivel": document.getElementById("nivel").value,
+                "grado": document.getElementById("grado").value,
+                "seccion": document.getElementById("seccion").value,
+                "fecNac": document.getElementById("fecNac").value,
+                "telefono": document.getElementById("telefono").value,
+                "dni": document.getElementById("dni").value,
+                "email": document.getElementById("email").value,
+                "direccion": document.getElementById("direccion").value,
+            };
             $.ajax({
-                url: "studentAdded.php",
+                url: "updateStudent.php",
                 type: "post",
-                dataType: "html",
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false
+                data: parametros
             })
-                .done(function(res){
-                    $.jGrowl("Registro agregado con éxito", { header: 'Agregado' });
-                    setTimeout(location.reload.bind(location), 1500);
-                });
+            .done(function(res){
+                console.log(res);
+                $.jGrowl("Registro agregado con éxito", { header: 'Agregado' });
+                setTimeout(location.reload.bind(location), 133500);
+            });
         });
     });
 
-    var parametros = {};
-    $('input[type=button]' ).click(function() {
-        this.sId = (this.id) ; // button ID
-        parametros = {
-            "id" : this.id
-        };
-        $.ajax({
-            data:  parametros,
-            url:   'getStudentInfo.php',
-            type:  'post',
-            beforeSend: function () {
-                $("#resultado").html("Procesando, espere por favor...");
-            },
-            success:  function (response) {
 
-                $("#resultado").html(response);
-            }
-        });
-    });
-
-    $('#btnDelete' ).click(function() {
-        $.ajax({
-            data:  parametros,
-            url:   'deleting_student.php',
-            type:  'post',
-            beforeSend: function () {
-                $("#").html("Procesando, espere por favor...");
-
-            },
-            success:  function (response) {
-                $.jGrowl("Registro eliminado con éxito", { header: 'Eliminado' });
-                setTimeout(location.reload.bind(location), 1500);
-                $("#").html(response);
-            }
-        });
-    });
     var imageLoader = document.getElementById('filePhoto');
     imageLoader.addEventListener('change', handleImage, false);
 

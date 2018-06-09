@@ -14,6 +14,7 @@ while($extraido = mysqli_fetch_array($stmt) ) {
         .$extraido['sexo'].','
         .$extraido['nivel'].','
         .$extraido['grado'].','
+        .$extraido['seccion'].','
         .$extraido['fecNacimiento'].','
         .$extraido['telefono'].','
         .$extraido['dni'].','

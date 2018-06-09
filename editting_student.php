@@ -14,7 +14,7 @@ Resultado <span id="resultado"></span>
                         <div class="muted pull-left"><i class="icon-plus-sign icon-large"></i> Editar alumno</div>
                     </div>
                     <div class="block-content collapse in">
-
+                        <form enctype="multipart/form-data" id="formuploadajax" method="post">
                             <!-- span 4 -->
                             <div class="uploader span2" onclick="$('#filePhoto').click()" style="height: 200px; width: 152px;" >
                                 <img id="imagePreview" src="images/uploadImage.jpg" style="">
@@ -87,6 +87,7 @@ Resultado <span id="resultado"></span>
                                     <button class="btn btn-success">Guardar</button>
                                 </center>
                             </div>
+                        </form>
                         <script>
                             /*jQuery(document).ready(function($){
                                 $("#add_student").submit(function(e){

@@ -1,6 +1,7 @@
 <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
     <thead>
     <tr>
+        <th>#</th>
         <th>Alumno</th>
         <th>Apoderado</th>
         <th>Relación</th>
@@ -19,6 +20,7 @@
                 $id = $row['id_apoderado'];
                 ?>
                 <tr>
+                    <td><?php echo $row['id_apoderado']; ?></td>
                     <td><?php echo $row['nombres_alumno'].' '.$row['apelPat_alumno'].' '.$row['apeMat_alumno']; ?></td>
                     <td><?php echo $row['nombres'].' '.$row['ape_paterno'].' '.$row['ape_materno']; ?></td>
                     <td><?php echo $row['relacion']; ?></td>

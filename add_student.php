@@ -9,14 +9,14 @@
                 <div class="span9" id="">
                      <div class="row-fluid">
                         <!-- block -->
-                        <div  id="block_bg" class="block" style="height: 550px">
+                        <div  id="block_bg" class="block">
                             <div class="navbar navbar-inner block-header">
                                 <div class="muted pull-left"><i class="icon-plus-sign icon-large"></i> Registrar alumno</div>
 						    </div>
 
                             <div class="block-content collapse in">
                                 <form enctype="multipart/form-data" id="formuploadajax" method="post">
-                                    <div id="documentacionAlumno" style="display: block; height: 550px">
+                                    <div id="documentacionAlumno" style="display: block;">
                                         <div class="span12">
                                             <h3>DOCUMENTOS</h3>
                                         </div>
@@ -58,7 +58,7 @@
                                             </label>
                                         </div>
 
-                                        <div class="span12" style="position: absolute; z-index: 100 !important;   top: 450px">
+                                        <div class="span12">
 
                                             <center>
                                                 <input type="button" class="btn btn-warning" onclick="formReset()" value="Cancelar">
@@ -66,18 +66,19 @@
                                             </center>
                                         </div>
                                     </div>
-                                    <div id="infoAlumno" style="display: none; height: 550px">
+                                    <div id="infoAlumno" style="display: none;">
                                         <div class="span12">
                                             <h3>DATOS DEL ALUMNO</h3>
                                         </div>
-                                        <div class="uploader span2" onclick="$('#filePhoto').click()" style="height: 150px; width: 120px;" >
+                                        <div class="uploader span3" onclick="$('#filePhoto').click()" style="height: 150px; width: 120px;" >
                                             <img id="imagePreview" src="images/uploadImage.jpg" style="">
                                             <input type="file" name="userprofile_picture" value="images/uploadImage.jpg" id="filePhoto" accept="image/*"/>
                                         </div>
 
-                                        <div class="span5">
+                                        <div class="span4 offset1">
+                                            <input type="text" class="input-block-level span9"  name="aux" id="aux" style="display: none" required>
                                             <label>CÓDIGO DE ALUMNO:</label>
-                                            <input type="text" class="input-block-level span9"  name="codAlumno" id="codAlumno" placeholder="Código de alumno" required>
+                                            <input type="text" class="input-block-level span9"  name="codAlumno" id="codAlumno" placeholder="Código de alumno" disabled>
                                             <label>APELLIDO PATERNO:</label>
                                             <input type="text" class="input-block-level span9" name="apePaterno"  id="apePaterno" placeholder="Apellido paterno" required>
                                             <label>APELLIDO MATERNO:</label>
@@ -86,9 +87,9 @@
                                             <input type="text" class="input-block-level span9" name="nombres" id="nombres"   placeholder="Nombres"  required>
 
                                         </div>
-                                        <div class="span5">
+                                        <div class="span4">
                                             <label>SEXO:</label>
-                                            <select id="sexo" class="span9" required>
+                                            <select name="sexo" id="sexo" class="span9" required>
                                                 <option value=""><< Seleccione >></option>
                                                 <option value="Femenino">Femenino</option>
                                                 <option value="Masculino">Masculino</option>
@@ -136,7 +137,7 @@
                                                 <input type="text" class="input-block-level span11" name="direccion" id="direccion" placeholder="Dirección" required>
                                             </div>
                                         </div>
-                                        <div class="span12" style="position: absolute; z-index: 100 !important;   top: 450px">
+                                        <div class="span12">
                                             <center>
                                                 <input type="button" class="btn btn-success" id="previous1" value="Anterior">
                                                 <input type="button" class="btn btn-warning" onclick="formReset()" value="Cancelar">
@@ -145,7 +146,7 @@
                                             </center>
                                         </div>
                                     </div>
-                                    <div id="infoApoderado" style="display: none; height: 550px">
+                                    <div id="infoApoderado" style="display: none;">
                                         <div class="span12">
                                             <h3>DATOS DEL APODERADO</h3>
                                         </div>
@@ -168,7 +169,7 @@
                                                 <input type="text" class="input-block-level span11" name="emailApoderado" placeholder="Correo electronico">
                                             </div>
                                         </div>
-                                        <div class="span12" style="position: absolute; z-index: 500 !important;   top: 450px">
+                                        <div class="span12">
                                             <center>
                                                 <input type="button" class="btn btn-success" id="previous2" value="Anterior">
                                                 <input type="button" class="btn btn-warning" onclick="formResetAll()" value="Cancelar">
@@ -223,7 +224,26 @@
         else
             $("#grado").find('option').remove()
     });
-
+    $.ajax({
+        url: "getAllStudents.php",
+        type: "post",
+    })
+    .done(function(res){
+        console.log(res);
+        var codigo = 0;
+        document.getElementById("aux").value = res;
+        var num = Number(document.getElementById("aux").value)+1;
+        if(document.getElementById("aux").value.length == 1 && document.getElementById("aux").value!="9")
+            codigo = "000" +num;
+        if(document.getElementById("aux").value.length == 2 && document.getElementById("aux").value!="99")
+            codigo = "00" + num;
+        if(document.getElementById("aux").value.length == 3 && document.getElementById("aux").value!="999")
+            codigo = "0" + num;
+        if(document.getElementById("aux").value.length == 3 )
+            codigo = num;
+        console.log(codigo)
+        document.getElementById("codAlumno").value = codigo.toString();
+    });
     $(function(){
         $("#formuploadajax").on("submit", function(e){
             e.preventDefault();
