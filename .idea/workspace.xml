@@ -4,7 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/getStudentsByGrade.php" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96336627-7a33-45d0-bf21-72c0065973b9" name="Default" comment="">
+    <list default="true" id="96336627-7a33-45d0-bf21-72c0065973b9" name="Default" comment="db mod">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/add_student.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_student.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,27 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sidebar_addStudents.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sidebar_addStudents.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" lean-forward="true" selection-end-line="23" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul2#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="sidebar_dashboard.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sidebar_dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -77,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/sidebar_secciones.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -87,10 +72,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret selection-end-line="23" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul2#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -100,10 +81,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul2#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -113,10 +90,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul2#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -124,8 +97,17 @@
       <file leaf-file-name="add_student.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_student.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="238" column="45" lean-forward="true" selection-start-line="238" selection-start-column="45" selection-end-line="238" selection-end-column="45" />
+            <state relative-caret-position="243">
+              <caret line="80" column="158" selection-start-line="80" selection-start-column="158" selection-end-line="80" selection-end-column="158" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="matricula.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/matricula.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-952">
+              <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -135,10 +117,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret selection-end-line="23" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul2#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -169,6 +147,7 @@
       <find>parametros</find>
       <find>echo &quot;Eliminado&quot;;</find>
       <find>show</find>
+      <find>aux</find>
     </findStrings>
     <replaceStrings>
       <replace>printEnrollment.php</replace>
@@ -246,9 +225,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -256,6 +235,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,6 +264,11 @@
             <path>
               <item name="SistemaDeMatricula" type="b2602c69:ProjectViewProjectNode" />
               <item name="SistemaDeMatricula" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="db" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SistemaDeMatricula" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SistemaDeMatricula" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="FotosAlumnos" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -294,7 +279,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,9 +290,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\PhpstormProjects\SistemaDeMatricula\db" />
       <recent name="C:\PhpstormProjects\SistemaDeMatricula" />
       <recent name="C:\PhpstormProjects\SistemaDeMatricula\bootstrap\js" />
-      <recent name="C:\PhpstormProjects\SistemaDeMatricula\db" />
       <recent name="C:\PhpstormProjects\SistemaDeMatricula\images" />
       <recent name="C:\PhpstormProjects\SistemaDeMatricula\bootstrap\img" />
     </key>
@@ -366,7 +350,8 @@
       <workItem from="1527941169502" duration="7247000" />
       <workItem from="1527954036061" duration="640000" />
       <workItem from="1528511363030" duration="14449000" />
-      <workItem from="1528557437452" duration="3068000" />
+      <workItem from="1528557437452" duration="3317000" />
+      <workItem from="1528576731847" duration="13000" />
     </task>
     <task id="LOCAL-00001" summary="added interfaces">
       <created>1524935693947</created>
@@ -494,16 +479,24 @@
       <option name="project" value="LOCAL" />
       <updated>1528560411509</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="db mod">
+      <created>1528561044966</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1528561044966</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151248000" />
+    <option name="totallyTimeSpent" value="151510000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23758389" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2409396" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
@@ -528,23 +521,23 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3161074" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33285302" />
       <window_info anchor="right" id="Database" order="3" weight="0.32978722" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32905984" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +561,8 @@
     <MESSAGE value="cambios" />
     <MESSAGE value="btn imprimir" />
     <MESSAGE value="cambios menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios menu" />
+    <MESSAGE value="db mod" />
+    <option name="LAST_COMMIT_MESSAGE" value="db mod" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -661,13 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10268">
           <caret line="604" column="16" selection-start-line="604" selection-start-column="16" selection-end-line="604" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/matricula.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -826,13 +813,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap/js/html2canvas.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/studentAdded.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -859,10 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="23" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -870,10 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="23" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul2#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -881,9 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="28" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,10 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" lean-forward="true" selection-end-line="23" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul2#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -902,10 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul2#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -913,10 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="23" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul2#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -924,10 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul2#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -935,9 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -951,7 +902,7 @@
     <entry file="file://$PROJECT_DIR$/sidebar_secciones.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -959,10 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="23" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul2#0;n#ul#0;n#center#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -973,10 +920,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/matricula.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-952">
+          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/add_student.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="238" column="45" lean-forward="true" selection-start-line="238" selection-start-column="45" selection-end-line="238" selection-end-column="45" />
+        <state relative-caret-position="243">
+          <caret line="80" column="158" selection-start-line="80" selection-start-column="158" selection-end-line="80" selection-end-column="158" />
         </state>
       </provider>
     </entry>

@@ -78,7 +78,7 @@
                                         <div class="span4 offset1">
                                             <input type="text" class="input-block-level span9"  name="aux" id="aux" style="display: none">
                                             <label>CÓDIGO DE ALUMNO:</label>
-                                            <input type="text" class="input-block-level span9"  name="codAlumno" id="codAlumno" placeholder="Código de alumno" disabled>
+                                            <input type="text" class="input-block-level span9"  name="codAlumno" id="codAlumno" placeholder="Código de alumno">
                                             <label>APELLIDO PATERNO:</label>
                                             <input type="text" class="input-block-level span9" name="apePaterno"  id="apePaterno" placeholder="Apellido paterno" required>
                                             <label>APELLIDO MATERNO:</label>
