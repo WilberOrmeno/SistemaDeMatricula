@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2018 a las 17:38:44
+-- Tiempo de generación: 09-06-2018 a las 18:16:55
 -- Versión del servidor: 10.1.31-MariaDB
 -- Versión de PHP: 7.2.3
 
@@ -51,8 +51,7 @@ CREATE TABLE `alumnos` (
 --
 
 INSERT INTO `alumnos` (`id_alumno`, `cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `nivel`, `grado`, `seccion`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`, `foto`) VALUES
-(1, '0001', 'Javier', 'Vera', 'Ormeño', '1', 'Secundaria', '5to', 'A', '2018-06-28', '987456321', '98765432', 'javier@gmail.com', 'aaaaaaaaaa', NULL),
-(2, '0002', 'Elvis', 'Espinoza', 'Velasque', '1', 'Secundaria', '5to', 'A', '2018-06-28', '987456321', '98765432', 'elvis@gmail.com', 'aaaaaaaaaa', NULL);
+(1, '1', 'Elena', 'Rodas', 'Quispe', 'Femenino', 'Secundaria', '5to', 'A', '0000-00-00', '994318344', '98765432', 'elena@hotmail.com', 'Calle Amador Merino Reyna 492', 'FotosAlumnos/cintia-moreno.jpg');
 
 -- --------------------------------------------------------
 
@@ -76,8 +75,7 @@ CREATE TABLE `apoderados` (
 --
 
 INSERT INTO `apoderados` (`id_apoderado`, `id_alumno`, `ape_paterno`, `ape_materno`, `nombres`, `relacion`, `celular`, `email`) VALUES
-(1, 1, 'bbb', 'ccc', 'aaa', 'Padre', '987654321', 'bbb@gmail.com'),
-(2, 2, 'bbb', 'ccc', 'aaa', 'Padre', '987654321', 'bbb@gmail.com');
+(1, 1, 'Quispe', 'Solis', 'Daniel', 'Padre', '987654311', 'daniel@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -101,8 +99,7 @@ CREATE TABLE `documentos` (
 --
 
 INSERT INTO `documentos` (`id`, `id_alumno`, `dni_nino`, `dni_apoderado`, `partida_nacimiento`, `certificado`, `resTraslado`, `pagoMatricula`) VALUES
-(1, 1, 0, 1, 0, 1, 0, 1),
-(2, 2, 1, 1, 1, 1, 0, 1);
+(1, 1, 0, 1, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -120,7 +117,7 @@ CREATE TABLE `periodo` (
 --
 
 INSERT INTO `periodo` (`periodo`, `id_periodo`) VALUES
-(2018, 1);
+(2009, 1);
 
 -- --------------------------------------------------------
 
@@ -145,7 +142,9 @@ INSERT INTO `seccion` (`id_seccion`, `nivel`, `grado`, `seccion`) VALUES
 (3, 'Secundaria', '2do', 'A'),
 (4, 'Secundaria', '3ro', 'A'),
 (5, 'Secundaria', '4to', 'A'),
-(6, 'Secundaria', '5to', 'A');
+(6, 'Secundaria', '5to', 'A'),
+(7, 'Inicial', '3aÃ±os', 'B'),
+(8, 'Inicial', '3aÃ±os', 'C');
 
 -- --------------------------------------------------------
 
@@ -214,31 +213,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `apoderados`
 --
 ALTER TABLE `apoderados`
-  MODIFY `id_apoderado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_apoderado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `documentos`
 --
 ALTER TABLE `documentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `periodo`
 --
 ALTER TABLE `periodo`
-  MODIFY `id_periodo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_periodo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `seccion`
 --
 ALTER TABLE `seccion`
-  MODIFY `id_seccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_seccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

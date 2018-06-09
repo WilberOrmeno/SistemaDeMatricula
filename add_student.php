@@ -76,7 +76,7 @@
                                         </div>
 
                                         <div class="span4 offset1">
-                                            <input type="text" class="input-block-level span9"  name="aux" id="aux" style="display: none" required>
+                                            <input type="text" class="input-block-level span9"  name="aux" id="aux" style="display: none">
                                             <label>CÓDIGO DE ALUMNO:</label>
                                             <input type="text" class="input-block-level span9"  name="codAlumno" id="codAlumno" placeholder="Código de alumno" disabled>
                                             <label>APELLIDO PATERNO:</label>
@@ -233,6 +233,9 @@
         var codigo = 0;
         document.getElementById("aux").value = res;
         var num = Number(document.getElementById("aux").value)+1;
+        if(document.getElementById("aux").value.length == 0)
+            codigo = "000" +1;
+
         if(document.getElementById("aux").value.length == 1 && document.getElementById("aux").value!="9")
             codigo = "000" +num;
         if(document.getElementById("aux").value.length == 2 && document.getElementById("aux").value!="99")
