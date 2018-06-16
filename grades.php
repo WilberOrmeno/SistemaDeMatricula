@@ -1,90 +1,82 @@
-<?php include("header.php") ?>
-<?php include('navbar.php') ?>
-<style>
-    div.warning {
-        background-color: 		red;
-        color: 					orange;
-    }
-</style>
-<link href="vendors/jGrowl/jquery.jgrowl.css" rel="stylesheet" media="screen">
-<script src="vendors/jGrowl/jquery.jgrowl.js"></script>
-<div class="container-fluid" id="">
-    <div class="row-fluid">
-        <?php include('sidebar_grades.php'); ?>
-        <div class="span9" id="content">
-            <div class="row-fluid">
-                <div id="block_bg" class="block">
-                    <div class="navbar navbar-inner block-header">
-                        <div class="muted pull-left">BUSCAR POR SECCIÓN</div>
-                        <input type="button" id="imprimir" onclick="printDiv()" class="btn btn-danger" style="display: none; margin-left: 500px" value="Imprimir"/>
-                    </div>
-                    <div class="block-content collapse in">
-                        <div class="span12">
-                            <div class="span2"></div>
-                            <div class="span4">
-                                <label>NIVEL:</label>
-                                <select name="nivel" id="nivel" class="span9" required>
-                                    <option value=""><< Seleccione >></option>
-                                    <option value="Inicial">Inicial</option>
-                                    <option value="Primaria">Primaria</option>
-                                    <option value="Secundaria">Secundaria</option>
-                                </select>
-                            </div>
-                            <div class="span4">
-                                <label>GRADO:</label>
-                                <select name="grado" id="grado" class="span9" required>
-                                    <option value=""><< Seleccione >></option>
-                                </select>
-                            </div>
-                            <div class="span2"></div>
-                            <div class="span4"></div>
-                            <div class="span4" align="center">
-                                <label align="left" style="margin-left: 45px" >SECCIÓN:</label>
-                                <select name="seccion" id="seccion" class="span9" required>
-                                    <option value=""><< Seleccione >></option>
-                                </select>
-                                <input type="button" href="javascript:;" onclick="obtener($('#nivel').val(),
-                                                                                                 $('#grado').val(),
-                                                                                                 $('#seccion').val());return false;"
-                                       class="btn btn-info"  value="Buscar alumnos"/>
-                            </div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onclick="show()">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <div class="block-content collapse in">
+                    <div class="span12">
+                        <div class="span2"></div>
+                        <div class="span4">
+                            <label>NIVEL:</label>
+                            <select name="nivel" id="nivel" class="span9" required>
+                                <option value=""><< Seleccione >></option>
+                                <option value="Inicial">Inicial</option>
+                                <option value="Primaria">Primaria</option>
+                                <option value="Secundaria">Secundaria</option>
+                            </select>
+                        </div>
+                        <div class="span4">
+                            <label>GRADO:</label>
+                            <select name="grado" id="grado" class="span9" required>
+                                <option value=""><< Seleccione >></option>
+                            </select>
+                        </div>
+                        <div class="span2"></div>
+                        <div class="span4"></div>
+                        <div class="span4" align="center">
+                            <label align="left" style="margin-left: 45px" >SECCIÓN:</label>
+                            <select name="seccion" id="seccion" class="span9" required>
+                                <option value=""><< Seleccione >></option>
+                            </select>
+                            <input type="button" href="javascript:;" onclick="obtener($('#nivel').val(),
+                                                             $('#grado').val(),
+                                                             $('#seccion').val());return false;"
+                                   class="btn btn-info"  value="Buscar alumnos"
+                                   data-dismiss="modal"/>
                         </div>
                     </div>
-                    <div id="imprimirEsto">
-                        <div style="margin-left: 40px"    >
-                        <label id="lniv" for="niv" style="display: none; left: 20px;">Nivel</label>
-                        <input type="text" id="niv" value="Secundaria" style="display: none; left: 20px;" disabled>
-                        <label id="lgr" for="gr" style="display: none; left: 20px;">Grado</label>
-                        <input type="text" id="gr" value="5to" style="display: none; left: 20px;" disabled>
-                        <label id="lsec" for="sec" style="display: none; left: 20px;">Seccion</label>
-                        <input type="text" id="sec" value="A" style="display: none; left: 20px;" disabled>
-                        </div>
-                        <table cellpadding="0" cellspacing="0" border="0" class="table" id="tabla" style="display: none;">
-                        <thead>
-                        <tr>
-                            <th>Cod. alumno</th>
-                            <th>Nombres</th>
-                            <th>Ape. Paterno</th>
-                            <th>Ape. Materno</th>
-                            <th>Teléfono</th>
-                            <th>DNI</th>
-                            <th>Dirección</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                    </div>
-
                 </div>
             </div>
-
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="show()">Close</button>
+            </div>
         </div>
+
     </div>
+</div>
+
+
+<div id="imprimirEsto" style="display: none">
+        <table cellpadding="0" cellspacing="0" border="0" class="table" id="tabla" style="display: none;">
+        <thead>
+        <tr>
+            <th>Cod. alumno</th>
+            <th>Nombres</th>
+            <th>Ape. Paterno</th>
+            <th>Ape. Materno</th>
+            <th>Teléfono</th>
+            <th>DNI</th>
+            <th>Dirección</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
 
 </div>
 <script language=Javascript>
+    function show() {
+        $("#example").show();
+        $("#imprimirEsto").hide();
+    }
     var options="";
     $("#nivel").on('change',function(){
         var value=$(this).val();
@@ -149,10 +141,12 @@
     });
     function obtener(nivel, grado, seccion){
         if(seccion == "" || seccion == null || seccion == undefined){
+
             $.jGrowl("No has ingresado una sección válida", {
                 theme:  'warning',
                 speed:  'slow',
                 header: '¡Alto!' });
+            show();
         }else{
             $("#imprimir").show();
             $("#lgr").show();

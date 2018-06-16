@@ -85,7 +85,6 @@
                                             <input type="text" class="input-block-level span9" name="apeMaterno"  id="apeMaterno"     placeholder="Apellido materno"     required>
                                             <label>NOMBRES:</label>
                                             <input type="text" class="input-block-level span9" name="nombres" id="nombres"   placeholder="Nombres"  required>
-
                                         </div>
                                         <div class="span4">
                                             <label>SEXO:</label>

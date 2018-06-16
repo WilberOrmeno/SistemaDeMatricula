@@ -1,8 +1,9 @@
 <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
     <thead>
     <tr>
+        <th>Cód. Alumno</th>
         <th>Alumno</th>
-        <th>DNI NIÑO</th>
+        <th>DNI ALUMNO</th>
         <th>DNI APODERADO</th>
         <th>PARTIDA NAC.</th>
         <th>CERT. ESTUDIOS</th>
@@ -21,7 +22,9 @@
             while($row = mysqli_fetch_array($query)) {
                 $id = $row['id'];
                 ?>
+
                 <tr align="center"  >
+                    <td align="center"><?php echo $row['id'] ?></td>
                     <td align="center"><?php echo $row['nombres_alumno'].' '.$row['apelPat_alumno'].' '.$row['apeMat_alumno']; ?></td>
                     <td align="center">
                         <?php if($row['dni_nino']==1){

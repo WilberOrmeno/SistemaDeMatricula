@@ -9,7 +9,6 @@
 			<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
 			<link href="bootstrap/css/font-awesome.css" rel="stylesheet" media="screen">
 			<link href="bootstrap/css/my_style.css" rel="stylesheet" media="screen">
-			<link href="bootstrap/css/print.css" rel="stylesheet" media="print">
 			<link href="vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
 			<link href="assets/styles.css" rel="stylesheet" media="screen">
 			<script src="vendors/jquery-1.9.1.min.js"></script>

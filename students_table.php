@@ -7,6 +7,7 @@
         <th>Ape. Materno</th>
         <th>Nivel</th>
         <th>Grado</th>
+        <th>Sección</th>
         <th>Telefono</th>
         <th>Email</th>
     </tr>
@@ -24,6 +25,7 @@
                     <td><?php echo $row['ape_materno']; ?></td>
                     <td><?php echo $row['nivel']; ?></td>
                     <td><?php echo $row['grado']; ?></td>
+                    <td><?php echo $row['seccion']; ?></td>
                     <td><?php echo $row['telefono']; ?></td>
                     <td><?php echo $row['email']; ?></td>
                 </tr>
