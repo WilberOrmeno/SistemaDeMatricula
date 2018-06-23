@@ -50,9 +50,6 @@ CREATE TABLE `alumnos` (
 -- Volcado de datos para la tabla `alumnos`
 --
 
-INSERT INTO `alumnos` (`id_alumno`, `cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `nivel`, `grado`, `seccion`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`, `foto`) VALUES
-(1, '1', 'Elena', 'Rodas', 'Quispe', 'Femenino', 'Secundaria', '5to', 'A', '0000-00-00', '994318344', '98765432', 'elena@hotmail.com', 'Calle Amador Merino Reyna 492', 'FotosAlumnos/cintia-moreno.jpg');
-
 -- --------------------------------------------------------
 
 --

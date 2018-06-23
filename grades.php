@@ -65,7 +65,7 @@
             <th>Dirección</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody">
 
         </tbody>
     </table>
@@ -148,6 +148,7 @@
                 header: '¡Alto!' });
             show();
         }else{
+            $("#tbody   ").empty();
             $("#imprimir").show();
             $("#lgr").show();
             $("#gr").show();
@@ -170,8 +171,6 @@
                 },
                 success:  function (response) {
                     $("#tabla").show();
-                    console.log(response);
-                    console.log('');
                     var data = response.split('|');
                     var i = 0;
                     $.each(data, function (index, element) {
@@ -180,9 +179,9 @@
                         {
                             var nuevafila= "<tr><td>" +
                                 res[1] + "</td><td>" +
+                                res[4] + "</td><td>" +
                                 res[2] + "</td><td>" +
                                 res[3] + "</td><td>" +
-                                res[4] + "</td><td>" +
                                 res[5] + "</td><td>" +
                                 res[6] + "</td><td>" +
                                 res[7] + "</td></tr>";

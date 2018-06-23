@@ -37,7 +37,7 @@
                                                 <input type="checkbox" value="1" name="resTraslado" style="height: 40px;margin: -2px 0 0">RESOLUCIÓN DE TRASLADO
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" value="1" name="pagoMatricula" style="height: 40px;margin: -2px 0 0">PAGO DE MATRÍCULA
+                                                <input type="checkbox" value="1" id="pagoMatricula" name="pagoMatricula" style="height: 40px;margin: -2px 0 0">PAGO DE MATRÍCULA
                                             </label>
                                         </div>
                                         <div class="span5">
@@ -243,7 +243,6 @@
             codigo = "0" + num;
         if(document.getElementById("aux").value.length == 3 )
             codigo = num;
-        console.log(codigo)
         document.getElementById("codAlumno").value = codigo.toString();
     });
     $(function(){
@@ -321,9 +320,16 @@
     }
 
     $("#next1").click(function(){
-        $("#documentacionAlumno").hide();
-        $("#infoAlumno").show();
-        $("#infoApoderado").hide();
+        console.log($("#pagoMatricula").prop('checked'));
+        if($("#pagoMatricula").prop('checked')){
+            $("#documentacionAlumno").hide();
+            $("#infoAlumno").show();
+            $("#infoApoderado").hide();
+        }
+        else{
+            $.jGrowl("No se ha realizado el pago de matrícula", { header: '¡Error!' });
+        }
+
     });
     $("#next2").click(function(){
         $("#documentacionAlumno").hide();

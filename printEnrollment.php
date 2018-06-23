@@ -49,51 +49,48 @@
                                         <td><?php echo $row['telefono']; ?></td>
                                         <td><?php echo $row['email']; ?></td>
                                         <td><button type="button" class="btn btn-info" onclick="printElement(<?php echo $row['cod_alumno']?>)">Imprimir</button></td>
-                                        <div id="<?php echo "printThis".$row['cod_alumno'] ?>" style="display: block; position: absolute; z-index: -19; width: 900px;">
+                                    <div id="<?php echo "printThis".$row['cod_alumno'] ?>" style="display: block; position: absolute; z-index: -19; width: 900px; top: 50px">
                                             <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
                                             <div class="row">
-                                                <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-                                                    <div class="well profile">
-                                                        <div class="col-sm-12">
-                                                            <div class="col-xs-12 col-sm-8">
-                                                            </div>
-                                                            <div class="col-xs-12 col-sm-4 text-center">
-                                                                <figure>
-                                                                    <figcaption class="ratings">
-                                                                    <img src="images/cetapsi-sinfondo.png" id="logo" style="height: 200px">
+                                                <div class="col-sm-12">
+                                                    <div class="col-xs-4 col-sm-4 text-left">
+                                                        <img src="<?php echo $row['foto'] ?>" id="foto" style="height: 200px; border: 1px solid white; border-radius: 20px">
+                                                    </div>
+                                                    <div class="col-xs-4 col-sm-4 text-left"></div>
+                                                    <div class="col-xs-4 col-sm-4 text-right">
+                                                        <img src="images/cetapsi-sinfondo.png" id="logo" style="height: 200px;">
+                                                    </div>
+                                                </div>
 
-
-                                                                </figure>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-12 divider">
-                                                            <div class="col-xs-4">
-                                                                <b><h3>Código:</h3></b>
-                                                                <b><h3>Nombres: </h3></b>
-                                                                <b><h3>Apellido Paterno: </h3></b>
-                                                                <b><h3>Apellido Materno:</h3></b>
-                                                                <b><h3>Sexo:</h3></b>
-                                                                <b><h3>Nivel:</h3></b>
-                                                                <b><h3>Grado:</h3></b>
-                                                                <b><h3>Sección:</h3></b>
-                                                                <b><h3>Teléfono:</h3></b>
-                                                                <b><h3>Email:</h3></b>
-                                                                <b><h3>Dirección:</h3></b>
-                                                            </div>
-                                                            <div class="col-xs-8">
-                                                                <h3><?php echo $row['cod_alumno']?> </h3>
-                                                                <h3> <?php echo $row['nombres']; ?> </h3>
-                                                                <h3><?php echo $row['ape_paterno']; ?> </h3>
-                                                                <h3> <?php echo $row['ape_materno']; ?> </h3>
-                                                                <h3><?php echo $row['sexo']; ?> </h3>
-                                                                <h3><?php echo $row['nivel']; ?> </h3>
-                                                                <h3><?php echo $row['grado']; ?> </h3>
-                                                                <h3> <?php echo $row['seccion']; ?> </h3>
-                                                                <h3> <?php echo $row['telefono']; ?> </h3>
-                                                                <h3> <?php echo $row['email']; ?> </h3>
-                                                                <h3><?php echo $row['direccion']; ?> </h3>
-                                                            </div>
-                                                        </div>
+                                                <div class="col-xs-12 col-xs-offset divider" style="top: 30px; ">
+                                                    <div class="col-xs-4 col-xs-offset-1">
+                                                        <hr><b><h3 style="font-weight: bold;">Código:</h3></b>
+                                                        <hr><b><h3 style="font-weight: bold;">Nombres: </h3></b>
+                                                        <hr><b><h3 style="font-weight: bold;">Apellido Paterno: </h3></b>
+                                                        <hr><b><h3 style="font-weight: bold;">Apellido Materno:</h3></b>
+                                                        <hr><b><h3 style="font-weight: bold;">Sexo:</h3></b>
+                                                        <hr><b><h3 style="font-weight: bold;">Nivel:</h3></b>
+                                                        <hr><b><h3 style="font-weight: bold;">Grado:</h3></b>
+                                                        <hr><b><h3 style="font-weight: bold;">Sección:</h3></b>
+                                                        <hr><b><h3 style="font-weight: bold;">Teléfono:</h3></b>
+                                                        <hr><b><h3 style="font-weight: bold;">Email:</h3></b>
+                                                        <hr><b><h3 style="font-weight: bold;">Dirección:</h3></b><hr>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <hr><h3><?php echo $row['cod_alumno']?> </h3>
+                                                        <hr><h3> <?php echo $row['nombres']; ?> </h3>
+                                                        <hr><h3><?php echo $row['ape_paterno']; ?> </h3>
+                                                        <hr><h3> <?php echo $row['ape_materno']; ?> </h3>
+                                                        <hr><h3><?php echo $row['sexo']; ?> </h3>
+                                                        <hr><h3><?php echo $row['nivel']; ?> </h3>
+                                                        <hr><h3><?php echo $row['grado']; ?> </h3>
+                                                        <hr><h3> <?php echo $row['seccion']; ?> </h3>
+                                                        <hr><h3> <?php echo $row['telefono']; ?> </h3>
+                                                        <hr><h3> <?php echo $row['email']; ?> </h3>
+                                                        <hr><h3><?php echo $row['direccion']; ?> </h3><hr>
+                                                    </div>
+                                                    <div class="col-xs-5 col-xs-offset-7" style="top: 150px;">
+                                                        <hr style="border-top:1px solid #000000 ;">
                                                     </div>
                                                 </div>
                                             </div>
