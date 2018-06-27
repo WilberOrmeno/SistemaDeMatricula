@@ -170,26 +170,26 @@
                 beforeSend: function () {
                 },
                 success:  function (response) {
-                    $("#tabla").show();
-                    var data = response.split('|');
-                    var i = 0;
-                    $.each(data, function (index, element) {
-                        var res = element.split(',');
-                        if(i<res.length-1)
-                        {
-                            var nuevafila= "<tr><td>" +
-                                res[1] + "</td><td>" +
-                                res[4] + "</td><td>" +
-                                res[2] + "</td><td>" +
-                                res[3] + "</td><td>" +
-                                res[5] + "</td><td>" +
-                                res[6] + "</td><td>" +
-                                res[7] + "</td></tr>";
-                            $("#tabla").append(nuevafila);
-                            i++;
-                        }
+                        $("#tabla").show();
+                        var data = response.split('|');
+                        var i = 0;
+                        $.each(data, function (index, element) {
+                            var res = element.split(',');
+                            if(i<res.length-1)
+                            {
+                                var nuevafila= "<tr><td>" +
+                                    res[1] + "</td><td>" +
+                                    res[4] + "</td><td>" +
+                                    res[2] + "</td><td>" +
+                                    res[3] + "</td><td>" +
+                                    res[5] + "</td><td>" +
+                                    res[6] + "</td><td>" +
+                                    res[7] + "</td></tr>";
+                                $("#tabla").append(nuevafila);
+                                i++;
+                            }
 
-                    });
+                        });
                 }
             });
         }
