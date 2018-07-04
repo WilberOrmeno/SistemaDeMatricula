@@ -53,6 +53,9 @@
                                             <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
                                             <div class="row">
                                                 <div class="col-sm-12">
+                                                    <div class="col-xs-12 col-sm-12 text-center">
+                                                        <h1>FICHA DE MATRÍCULA</h1>
+                                                    </div>
                                                     <div class="col-xs-4 col-sm-4 text-left">
                                                         <img src="<?php echo $row['foto'] ?>" id="foto" style="height: 200px; border: 1px solid white; border-radius: 20px">
                                                     </div>
