@@ -67,30 +67,30 @@
 
                                                 <div class="col-xs-12 col-xs-offset divider" style="top: 30px; ">
                                                     <div class="col-xs-4 col-xs-offset-1">
-                                                        <hr><b><h3 style="font-weight: bold;">Código:</h3></b>
-                                                        <hr><b><h3 style="font-weight: bold;">Nombres: </h3></b>
-                                                        <hr><b><h3 style="font-weight: bold;">Apellido Paterno: </h3></b>
-                                                        <hr><b><h3 style="font-weight: bold;">Apellido Materno:</h3></b>
-                                                        <hr><b><h3 style="font-weight: bold;">Sexo:</h3></b>
-                                                        <hr><b><h3 style="font-weight: bold;">Nivel:</h3></b>
-                                                        <hr><b><h3 style="font-weight: bold;">Grado:</h3></b>
-                                                        <hr><b><h3 style="font-weight: bold;">Sección:</h3></b>
-                                                        <hr><b><h3 style="font-weight: bold;">Teléfono:</h3></b>
-                                                        <hr><b><h3 style="font-weight: bold;">Email:</h3></b>
-                                                        <hr><b><h3 style="font-weight: bold;">Dirección:</h3></b><hr>
+                                                        <hr><h4 style="font-weight: bold; margin: -5px">Código:</h4>
+                                                        <hr><h4 style="font-weight: bold; margin: -5px">Nombres: </h4>
+                                                        <hr><h4 style="font-weight: bold; margin: -5px">Apellido Paterno: </h4>
+                                                        <hr><h4 style="font-weight: bold; margin: -5px">Apellido Materno:</h4>
+                                                        <hr><h4 style="font-weight: bold; margin: -5px">Sexo:</h4>
+                                                        <hr><h4 style="font-weight: bold; margin: -5px">Nivel:</h4>
+                                                        <hr><h4 style="font-weight: bold; margin: -5px">Grado:</h4>
+                                                        <hr><h4 style="font-weight: bold; margin: -5px">Sección:</h4>
+                                                        <hr><h4 style="font-weight: bold; margin: -5px">Teléfono:</h4>
+                                                        <hr><h4 style="font-weight: bold; margin: -5px">Email:</h4>
+                                                        <hr><h4 style="font-weight: bold; margin: -5px">Dirección:</h4><hr>
                                                     </div>
                                                     <div class="col-xs-6">
-                                                        <hr><h3><?php echo $row['cod_alumno']?> </h3>
-                                                        <hr><h3> <?php echo $row['nombres']; ?> </h3>
-                                                        <hr><h3><?php echo $row['ape_paterno']; ?> </h3>
-                                                        <hr><h3> <?php echo $row['ape_materno']; ?> </h3>
-                                                        <hr><h3><?php echo $row['sexo']; ?> </h3>
-                                                        <hr><h3><?php echo $row['nivel']; ?> </h3>
-                                                        <hr><h3><?php echo $row['grado']; ?> </h3>
-                                                        <hr><h3> <?php echo $row['seccion']; ?> </h3>
-                                                        <hr><h3> <?php echo $row['telefono']; ?> </h3>
-                                                        <hr><h3> <?php echo $row['email']; ?> </h3>
-                                                        <hr><h3><?php echo $row['direccion']; ?> </h3><hr>
+                                                        <hr><h4 style="margin: -5px"><?php echo $row['cod_alumno']?> </h4>
+                                                        <hr><h4 style="margin: -5px"> <?php echo $row['nombres']; ?> </h4>
+                                                        <hr><h4 style="margin: -5px"><?php echo $row['ape_paterno']; ?> </h4>
+                                                        <hr><h4 style="margin: -5px"> <?php echo $row['ape_materno']; ?> </h4>
+                                                        <hr><h4 style="margin: -5px"><?php echo $row['sexo']; ?> </h4>
+                                                        <hr><h4 style="margin: -5px"><?php echo $row['nivel']; ?> </h4>
+                                                        <hr><h4 style="margin: -5px"><?php echo $row['grado']; ?> </h4>
+                                                        <hr><h4 style="margin: -5px"> <?php echo $row['seccion']; ?> </h4>
+                                                        <hr><h4 style="margin: -5px"> <?php echo $row['telefono']; ?> </h4>
+                                                        <hr><h4 style="margin: -5px"> <?php echo $row['email']; ?> </h4>
+                                                        <hr><h4 style="margin: -5px"><?php echo $row['direccion']; ?> </h4><hr>
                                                     </div>
                                                     <div class="col-xs-5 col-xs-offset-7" style="top: 150px;">
                                                         <hr style="border-top:1px solid #000000 ;">
