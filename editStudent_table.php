@@ -6,7 +6,7 @@
     </div>
     <thead>
     <tr>
-        <th>Cod. alumno</th>
+        <th>#</th>
         <th>Nombres</th>
         <th>Ape. Paterno</th>
         <th>Ape. Materno</th>
@@ -19,12 +19,14 @@
     </thead>
     <tbody>
     <?php
+    $i = 0;
     $query = mysqli_query(conectar(),"select * from alumnos")or die(mysqli_error(conectar()));
     while($row = mysqli_fetch_array($query)) {
+        $i++;
         $id = $row['id_alumno'];
         ?>
         <tr>
-            <td><?php echo $row['cod_alumno']?></td>
+            <td><?php echo $i?></td>
             <td><?php echo $row['nombres']; ?></td>
             <td><?php echo $row['ape_paterno']; ?></td>
             <td><?php echo $row['ape_materno']; ?></td>

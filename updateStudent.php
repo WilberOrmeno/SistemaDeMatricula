@@ -2,7 +2,7 @@
 include("dbcon.php");
 $con=conectar();
 $Id = $_POST['id'];
-$CodAlumno = $_POST['codigo'];
+$CodAlumno = $_POST['codAlumno'];
 $ApePaterno = $_POST['apePaterno'];
 $ApeMaterno = $_POST['apeMaterno'];
 $Nombres = $_POST['nombres'];
@@ -20,5 +20,4 @@ $query = "UPDATE `alumnos` SET `cod_alumno`='$CodAlumno', `nombres`='$Nombres', 
  `sexo` = '$Sexo', `nivel` = '$Nivel', `grado` = '$Grado', `fecNacimiento` = '$FecNac', `telefono` = '$Telefono', `dni` = '$DNI', 
  `email` = '$Email', `direccion` = '$Direccion' WHERE  `id_alumno`=$Id";
 $stmt = mysqli_query($con,$query);
-echo $query;
 ?>

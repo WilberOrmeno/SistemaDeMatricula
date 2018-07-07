@@ -8,8 +8,6 @@
             <div class="row-fluid">
                 <!-- block -->
                 <div  id="block_bg" class="block">
-                    <form id="add_student" class="form-signin" method="post">
-
                         <div class="navbar navbar-inner block-header">
                             <div class="muted pull-left"><i class="icon-reorder icon-large"></i> Lista de estudiantes</div>
                             <div class="muted pull-right">
@@ -42,7 +40,8 @@
                             <div class="muted pull-left"><i class="icon-plus-sign icon-large"></i> Editar alumno</div>
                         </div>
                         <div class="block-content collapse in">
-                            <form enctype="multipart/form-data" id="formuploadajax" method="post">
+                            <div class="row">asdasd</div>
+                            <form enctype="multipart/form-data" name="formuploadajax" id="formuploadajax" method="post">
                                 <div class="uploader span2" onclick="$('#filePhoto').click()" style="height: 150px; width: 120px;" >
                                     <img id="imagePreview" src="images/uploadImage.jpg" style="">
                                     <input type="file" name="userprofile_picture" value="images/uploadImage.jpg" id="filePhoto" accept="image/*"/>
@@ -50,7 +49,6 @@
 
                                 <div class="span5">
                                     <input type="text" class="input-block-level span9"  name="id" id="id" style="display: none" required>
-                                    <label>CÓDIGO DE ALUMNO:</label>
                                     <input type="text" class="input-block-level span9"  name="codAlumno" id="codAlumno" placeholder="Código de alumno" required>
                                     <label>APELLIDO PATERNO:</label>
                                     <input type="text" class="input-block-level span9" name="apePaterno"  id="apePaterno" placeholder="Apellido paterno" required>
@@ -112,8 +110,8 @@
                                 </div>
                                 <div class="span12">
                                     <center>
-                                        <input type="button" class="btn btn-warning" onclick="formReset()" value="Cancelar">
-                                        <input type="button" class="btn btn-info" id="guardar" value="Guardar"/>
+                                        <!--<input type="button" class="btn btn-warning" onclick="formReset()" value="Cancelar">-->
+                                        <input type="submit" class="btn btn-info"  value="Guardar"/>
 
                                     </center>
                                 </div>
@@ -183,34 +181,24 @@
     });
 
     $(function(){
-        $("#guardar").on("click", function(e){
+        $("#formuploadajax").on("submit", function(e){
             e.preventDefault();
-            var parametros = {
-                "id" : document.getElementById("id").value,
-                "codigo": document.getElementById("codAlumno").value,
-                "apePaterno": document.getElementById("apePaterno").value,
-                "apeMaterno": document.getElementById("apeMaterno").value,
-                "nombres": document.getElementById("nombres").value,
-                "sexo": document.getElementById("sexo").value,
-                "nivel": document.getElementById("nivel").value,
-                "grado": document.getElementById("grado").value,
-                "seccion": document.getElementById("seccion").value,
-                "fecNac": document.getElementById("fecNac").value,
-                "telefono": document.getElementById("telefono").value,
-                "dni": document.getElementById("dni").value,
-                "email": document.getElementById("email").value,
-                "direccion": document.getElementById("direccion").value,
-            };
+            var f = $(this);
+            var formData = new FormData(document.getElementById("formuploadajax"));
+            formData.append("dato", "valor");
             $.ajax({
                 url: "updateStudent.php",
                 type: "post",
-                data: parametros
+                dataType: "html",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false
             })
-            .done(function(res){
-                console.log(res);
-                $.jGrowl("Registro agregado con éxito", { header: 'Agregado' });
-                setTimeout(location.reload.bind(location), 133500);
-            });
+                .done(function(res){
+                    $.jGrowl("Registro agregado con éxito", { header: 'Agregado' });
+                    setTimeout(location.reload.bind(location), 1500);
+                });
         });
     });
 

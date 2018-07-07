@@ -14,6 +14,7 @@ $Nombres = $_POST['nombres'];
 $Sexo = $_POST['sexo'];
 $Nivel= $_POST['nivel'];
 $Grado = $_POST['grado'];
+$Seccion = $_POST['seccion'];
 $FecNac = $_POST['fecNac'];
 $Telefono = $_POST['telefono'];
 $DNI = $_POST['dni'];
@@ -23,8 +24,8 @@ $foto=$_FILES["userprofile_picture"]["name"];
 $ruta=$_FILES["userprofile_picture"]["tmp_name"];
 $destino="FotosAlumnos/".$foto;
 copy($ruta,$destino);
-$query = "INSERT INTO `alumnos`(`cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `nivel`, `grado`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`, `foto`) 
-VALUES ($CodAlumno,'$Nombres', '$ApeMaterno','$ApePaterno','$Sexo','$Nivel','$Grado','$FecNac','$Telefono','$DNI','$Email','$Direccion','$destino')";
+$query = "INSERT INTO `alumnos`(`cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `nivel`, `grado`, `seccion`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`, `foto`) 
+VALUES ($CodAlumno,'$Nombres', '$ApeMaterno','$ApePaterno','$Sexo','$Nivel','$Grado', 'seccion','$FecNac','$Telefono','$DNI','$Email','$Direccion','$destino')";
 $stmt = mysqli_query($con,$query);
 
 $ApePaternoApoderado = $_POST['apePatApoderado'];

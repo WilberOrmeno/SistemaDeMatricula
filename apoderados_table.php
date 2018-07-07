@@ -11,16 +11,18 @@
     </thead>
     <tbody>
             <?php
+            $i = 0;
             $query = mysqli_query(conectar(),"SELECT apoderados.id_apoderado, apoderados.ape_paterno, apoderados.ape_materno, apoderados.nombres, apoderados.relacion, apoderados.celular, apoderados.email, alumnos.nombres 
                                                     AS nombres_alumno, alumnos.ape_paterno AS apelPat_alumno, alumnos.ape_materno AS apeMat_alumno
                                                     FROM apoderados
                                                     INNER JOIN alumnos
                                                     ON apoderados.id_alumno=alumnos.id_alumno")or die(mysqli_error(conectar()));
             while($row = mysqli_fetch_array($query)) {
+                $i++;
                 $id = $row['id_apoderado'];
                 ?>
                 <tr>
-                    <td><?php echo $row['id_apoderado']; ?></td>
+                    <td><?php echo $i ?></td>
                     <td><?php echo $row['nombres_alumno'].' '.$row['apelPat_alumno'].' '.$row['apeMat_alumno']; ?></td>
                     <td><?php echo $row['nombres'].' '.$row['ape_paterno'].' '.$row['ape_materno']; ?></td>
                     <td><?php echo $row['relacion']; ?></td>

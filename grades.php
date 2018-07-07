@@ -56,7 +56,7 @@
         <table cellpadding="0" cellspacing="0" border="0" class="table" id="tabla" style="display: none;">
         <thead>
         <tr>
-            <th>Cod. alumno</th>
+            <th>#</th>
             <th>Nombres</th>
             <th>Ape. Paterno</th>
             <th>Ape. Materno</th>

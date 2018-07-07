@@ -53,7 +53,7 @@
                         }
                         ?></td>
                     <td align="center">
-                        <?php if($row['resTraslado']==1){
+                        <?php if($row['certificado']==1){
                             echo '<input type="checkbox" checked disabled>';
                         }
                         else{
@@ -63,7 +63,7 @@
 
                         </td>
                     <td align="center">
-                        <?php if($row['dni_nino']==1){
+                        <?php if($row['resTraslado']==1){
                             echo '<input type="checkbox" checked disabled>';
                         }
                         else{
