@@ -25,7 +25,7 @@ $ruta=$_FILES["userprofile_picture"]["tmp_name"];
 $destino="FotosAlumnos/".$foto;
 copy($ruta,$destino);
 $query = "INSERT INTO `alumnos`(`cod_alumno`, `nombres`, `ape_materno`, `ape_paterno`, `sexo`, `nivel`, `grado`, `seccion`, `fecNacimiento`, `telefono`, `dni`, `email`, `direccion`, `foto`) 
-VALUES ($CodAlumno,'$Nombres', '$ApeMaterno','$ApePaterno','$Sexo','$Nivel','$Grado', 'seccion','$FecNac','$Telefono','$DNI','$Email','$Direccion','$destino')";
+VALUES ($CodAlumno,'$Nombres', '$ApeMaterno','$ApePaterno','$Sexo','$Nivel','$Grado', '$seccion','$FecNac','$Telefono','$DNI','$Email','$Direccion','$destino')";
 $stmt = mysqli_query($con,$query);
 
 $ApePaternoApoderado = $_POST['apePatApoderado'];
